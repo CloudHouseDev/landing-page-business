@@ -1,7 +1,7 @@
 :root {
-  --font-size: "16px";
-  --font-weight: 400;
-  --font-family: "Roboto", sans-serif;
+    --font-size: "16px";
+    --font-weight: 400;
+    --font-family: "Roboto", sans-serif;
 }
 
 * {
@@ -11,29 +11,29 @@
     box-sizing: border-box;
 }
 
-html, 
+html,
 body {
-  height: 100%;
-  font-size: var(--font-size) !important;
-  font-family: var(--font-family) !important;
-  font-weight: var(--font-weight) !important;
+    height: 100%;
+    font-size: var(--font-size) !important;
+    font-family: var(--font-family) !important;
+    font-weight: var(--font-weight) !important;
 }
 
 @media (max-height: 800px) and (min-width: 24rem) {
- html,
- body {
-      font-size: 95%;
+    html,
+    body {
+        font-size: 95%;
     }
-  }
+}
 @media (max-height: 700px) and (min-width: 24rem) {
     html,
     body {
-      font-size: 90%;
+        font-size: 90%;
     }
-  }
+}
 @media (max-height: 600px) and (min-width: 24rem) {
     html,
     body {
-      font-size: 85%;
+        font-size: 85%;
     }
-  }
+}

@@ -1,7 +1,13 @@
-import React from 'react';
+import React from "react";
+
+import Container from "../components/container/Container";
 
 function DefaultPage() {
-  return <h1>opa</h1>;
+    return (
+        <Container>
+            <h1>opa</h1>
+        </Container>
+    );
 }
 
 export default DefaultPage;
