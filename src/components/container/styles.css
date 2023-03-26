@@ -8,7 +8,6 @@
 }
 
 .wrapper-limit {
-    width: 100%;
-    max-width: 1500px;
+    width: 80%;
     padding: 0 1rem;
 }
