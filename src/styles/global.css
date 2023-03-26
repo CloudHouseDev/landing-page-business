@@ -25,19 +25,19 @@ body {
     font-weight: var(--font-weight) !important;
 }
 
-@media (max-height: 800px) and (min-width: 24rem) {
+@media (max-height: 800px) and (min-width: 384px) {
     html,
     body {
         font-size: 95%;
     }
 }
-@media (max-height: 700px) and (min-width: 24rem) {
+@media (max-height: 700px) and (min-width: 384px) {
     html,
     body {
         font-size: 90%;
     }
 }
-@media (max-height: 600px) and (min-width: 24rem) {
+@media (max-height: 600px) and (min-width: 384px) {
     html,
     body {
         font-size: 85%;

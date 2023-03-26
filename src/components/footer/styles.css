@@ -9,19 +9,28 @@
     background-color: var(--black-400);
     color: var(--white-400);
     transition: 0.5s ease-in;
-}
-
-.footer span,
-strong {
     font-size: 14px;
+    text-align: center;
 }
 
-.footer strong,
-a {
+.footer-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-details a {
     padding-left: 10px;
     color: var(--white-400);
 }
 
-.footer a:hover {
+.footer-details a:hover {
     color: var(--blue-400);
+}
+
+@media (max-width: 340px) {
+    .footer-details {
+        flex-direction: column;
+    }
 }
