@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    justify-items: center;
+    border: 2px solid red;
     background-color: var(--black-400);
 }
 
@@ -17,9 +17,10 @@
     height: 100%;
     display: flex;
     align-items: center;
-    max-width: 500px;
+    border: 2px solid blue;
     opacity: 1;
     visibility: visible;
+    z-index: 999;
 }
 
 .nav {
@@ -36,6 +37,7 @@
     font-weight: 500;
     opacity: 1;
     visibility: visible;
+    z-index: 999;
 }
 
 .nav:hover {
@@ -48,28 +50,41 @@
     border: none;
     background-color: none;
     background-color: var(--black-400);
+    opacity: 0;
+    z-index: 0;
+    visibility: hidden;
+    border: 2px solid pink;
 }
 
-.bar1,
-.bar2,
-.bar3 {
+.nav-top,
+.nav-center,
+.nav-bottom {
     width: 25px;
     height: 4px;
     border-radius: 2px;
     background-color: grey;
     margin: 4px 0;
     transition: 0.4s;
+    opacity: 0;
+    z-index: 0;
+    visibility: hidden;
 }
 
-.change .bar1 {
+.change .nav-top {
+    opacity: 0;
+    visibility: hidden;
+    z-index: 0;
     transform: translate(0, 8px) rotate(-45deg);
 }
 
-.change .bar2 {
+.change .nav-center {
     opacity: 0;
 }
 
-.change .bar3 {
+.change .nav-bottom {
+    opacity: 0;
+    z-index: 0;
+    visibility: hidden;
     transform: translate(0, -8px) rotate(45deg);
 }
 
@@ -77,9 +92,34 @@
     .wrapper-nav {
         opacity: 0;
         visibility: hidden;
+        z-index: 0;
     }
     .nav {
         opacity: 0;
         visibility: hidden;
+        z-index: 0;
+    }
+    .container {
+        opacity: 1;
+        visibility: visible;
+        z-index: 999;
+    }
+    .nav-top,
+    .nav-center,
+    .nav-bottom {
+        opacity: 1;
+        visibility: visible;
+        z-index: 999;
+    }
+    .change .nav-top {
+        opacity: 1;
+        visibility: visible;
+        z-index: 999;
+    }
+
+    .change .nav-bottom {
+        opacity: 1;
+        visibility: visible;
+        z-index: 999;
     }
 }

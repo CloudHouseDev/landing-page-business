@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import CloudHouseIT from "../../assets/images/cloud_house_logo_transparent_dark.png";
 
@@ -18,15 +18,15 @@ function Header() {
                 <li className="nav">Contato</li>
             </ul>
             <button
+                type="button"
                 className={classNames("container", {
                     change: isOpen,
                 })}
-                type="button"
                 onClick={() => setIsOpen((currentState) => !currentState)}
             >
-                <div className="bar1" />
-                <div className="bar2" />
-                <div className="bar3" />
+                <div className="nav-top" />
+                <div className="nav-center" />
+                <div className="nav-bottom" />
             </button>
         </header>
     );
