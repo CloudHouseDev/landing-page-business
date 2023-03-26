@@ -4,7 +4,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 2px solid red;
     background-color: var(--black-400);
 }
 
@@ -17,14 +16,10 @@
     height: 100%;
     display: flex;
     align-items: center;
-    border: 2px solid blue;
-    opacity: 1;
-    visibility: visible;
-    z-index: 999;
 }
 
 .nav {
-    color: white;
+    color: var(--white-400);
     height: 100%;
     flex-direction: column;
     align-self: center;
@@ -35,9 +30,6 @@
     transition: 0.3s ease-in-out;
     padding: 0 1.25rem;
     font-weight: 500;
-    opacity: 1;
-    visibility: visible;
-    z-index: 999;
 }
 
 .nav:hover {
@@ -50,10 +42,6 @@
     border: none;
     background-color: none;
     background-color: var(--black-400);
-    opacity: 0;
-    z-index: 0;
-    visibility: hidden;
-    border: 2px solid pink;
 }
 
 .nav-top,
@@ -62,18 +50,12 @@
     width: 25px;
     height: 4px;
     border-radius: 2px;
-    background-color: grey;
+    background-color: var(--white-400);
     margin: 4px 0;
     transition: 0.4s;
-    opacity: 0;
-    z-index: 0;
-    visibility: hidden;
 }
 
 .change .nav-top {
-    opacity: 0;
-    visibility: hidden;
-    z-index: 0;
     transform: translate(0, 8px) rotate(-45deg);
 }
 
@@ -82,44 +64,5 @@
 }
 
 .change .nav-bottom {
-    opacity: 0;
-    z-index: 0;
-    visibility: hidden;
     transform: translate(0, -8px) rotate(45deg);
-}
-
-@media (max-width: 1024px) {
-    .wrapper-nav {
-        opacity: 0;
-        visibility: hidden;
-        z-index: 0;
-    }
-    .nav {
-        opacity: 0;
-        visibility: hidden;
-        z-index: 0;
-    }
-    .container {
-        opacity: 1;
-        visibility: visible;
-        z-index: 999;
-    }
-    .nav-top,
-    .nav-center,
-    .nav-bottom {
-        opacity: 1;
-        visibility: visible;
-        z-index: 999;
-    }
-    .change .nav-top {
-        opacity: 1;
-        visibility: visible;
-        z-index: 999;
-    }
-
-    .change .nav-bottom {
-        opacity: 1;
-        visibility: visible;
-        z-index: 999;
-    }
 }
