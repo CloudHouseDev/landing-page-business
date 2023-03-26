@@ -1,15 +1,18 @@
+import React from "react";
 import classNames from "classnames";
-import React, { useState } from "react";
 
+import { useSelector, useDispatch } from "react-redux";
 import CloudHouseIT from "../../assets/images/cloud_house_logo_transparent_dark.png";
 
 import useWindowResize from "../../hooks/useWindowResize";
+import { changeValue } from "../../hooks/useShowingModalMenu";
 
 import "./styles.css";
 
 function Header() {
-    const [isOpen, setIsOpen] = useState(false);
     const { currentSize, defaultMediaQueries } = useWindowResize();
+    const isOpen = useSelector((state) => state.isOpen.value);
+    const dispatch = useDispatch();
 
     return (
         <header className="header">
@@ -28,7 +31,7 @@ function Header() {
                     className={classNames("container", {
                         change: isOpen,
                     })}
-                    onClick={() => setIsOpen((currentState) => !currentState)}
+                    onClick={() => dispatch(changeValue())}
                 >
                     <div className="nav-top" />
                     <div className="nav-center" />
