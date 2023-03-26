@@ -3,7 +3,7 @@
     height: 4rem;
     display: flex;
     align-items: center;
-    /*  justify-content: space-around; */
+    justify-content: space-between;
     justify-items: center;
     background-color: var(--black-400);
 }
@@ -16,7 +16,6 @@
 .header ul {
     height: 100%;
     display: flex;
-    /* justify-content: space-evenly; */
     align-items: center;
     max-width: 500px;
 }
