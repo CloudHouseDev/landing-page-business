@@ -43,3 +43,8 @@ body {
         font-size: 85%;
     }
 }
+
+button,
+a {
+    cursor: pointer;
+}
