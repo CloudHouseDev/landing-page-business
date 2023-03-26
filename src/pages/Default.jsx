@@ -1,11 +1,12 @@
 import React from "react";
 
 import Container from "../components/container/Container";
+import Header from "../components/header/Header";
 
 function DefaultPage() {
     return (
         <Container>
-            <h1>opa</h1>
+            <Header />
         </Container>
     );
 }

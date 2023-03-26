@@ -2,6 +2,11 @@
     --font-size: "16px";
     --font-weight: 400;
     --font-family: "Roboto", sans-serif;
+    --background-color-default: #f2f2f2;
+
+    --black-400: #11111f;
+    --white-400: #ffffff;
+    --blue-400: #59cbe8;
 }
 
 * {
@@ -14,6 +19,7 @@
 html,
 body {
     height: 100%;
+    background-color: var(--background-color-default) !important;
     font-size: var(--font-size) !important;
     font-family: var(--font-family) !important;
     font-weight: var(--font-weight) !important;
