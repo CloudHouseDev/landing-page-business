@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 
 import { useSelector, useDispatch } from "react-redux";
-import CloudHouseIT from "../../assets/images/cloud_house_logo_transparent_dark.png";
+import CloudHouseIT from "../../assets/images/cloud_house_logo_transparent_white.png";
 
 import useWindowResize from "../../hooks/useWindowResize";
 import { changeValue } from "../../hooks/useShowingModalMenu";

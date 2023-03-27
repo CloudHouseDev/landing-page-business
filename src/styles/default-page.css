@@ -1,3 +1,7 @@
 .background-black {
     background-color: var(--black-400);
 }
+
+.background-white {
+    background-color: var(--white-400);
+}

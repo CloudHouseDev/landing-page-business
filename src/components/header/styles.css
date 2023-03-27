@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: space-between;
     background-color: var(--black-400);
+    margin-top: 10px;
 }
 
 .header img {
