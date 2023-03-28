@@ -12,8 +12,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
-    margin-bottom: 15px;
+    margin: 5px 0;
 }
 
 .header-modal-menu img {
