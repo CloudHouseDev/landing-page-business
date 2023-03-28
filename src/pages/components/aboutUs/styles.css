@@ -1,0 +1,52 @@
+.wrapper-about-us-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 60px 0;
+    overflow: hidden;
+    padding: 15px 10px;
+}
+
+.box {
+    padding: 50px 30px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    transition: all ease-in-out 0.4s;
+    min-height: 280px;
+    max-width: 450px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 9px;
+    background-color: var(--white-400);
+}
+
+.box:hover {
+    background: var(--blue-400);
+    padding-top: 20px;
+}
+
+.box strong {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--black-200);
+    transition: all ease-in-out 0.4s;
+}
+.box:hover strong {
+    color: var(--white-400);
+}
+
+.box span {
+    color: var(--grey-400);
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5rem;
+    transition: all ease-in-out 0.4s;
+}
+.box:hover span {
+    color: var(--white-400);
+}
