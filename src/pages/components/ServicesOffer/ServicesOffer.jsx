@@ -26,13 +26,13 @@ function ServicesOffer() {
                     <div className="wrapper-icon">
                         <LaptopOutlined />
                     </div>
-                    <h4>Qualidade e Performance de Software</h4>
+                    <h4>Software & Licenciamento</h4>
                 </div>
                 <div className="box-service-offers">
                     <div className="wrapper-icon">
-                        <BarChartOutlined />
+                        <CloudServerOutlined />
                     </div>
-                    <h4>Análise de Sistemas e Testes Automatizados</h4>
+                    <h4>Gerenciamento em Nuvem</h4>
                 </div>
                 <div className="box-service-offers">
                     <div className="wrapper-icon">
@@ -52,11 +52,12 @@ function ServicesOffer() {
                     </div>
                     <h4>Desenvolvimento de Microsserviços & Monólitos</h4>
                 </div>
+
                 <div className="box-service-offers">
                     <div className="wrapper-icon">
-                        <CloudServerOutlined />
+                        <BarChartOutlined />
                     </div>
-                    <h4>Gerenciamento em Nuvem</h4>
+                    <h4>Análise de Sistemas e Testes Automatizados</h4>
                 </div>
             </div>
         </section>

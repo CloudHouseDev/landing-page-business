@@ -16,6 +16,7 @@
     width: 100%;
     margin: 0px 10px;
     border-radius: 9px;
+    flex-wrap: wrap;
 }
 
 .box-service-offers {
@@ -24,16 +25,13 @@
     transition: all ease-in-out 0.4s;
     background-color: var(--white-400);
     min-height: 280px;
-    max-width: 470px;
-    min-width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     border-radius: 9px;
-    max-width: 350px;
-    min-width: 295px;
-    margin: 0px 10px;
+    width: 300px;
+    margin: 10px 10px;
 }
 
 .box-service-offers:hover {
@@ -82,4 +80,16 @@
     background: var(--blue-400);
     transition: all 0.3s ease-out 0s;
     transform: translateZ(-1px);
+}
+
+@media (max-width: 1024px) {
+    .box-service-offers {
+        width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .box-service-offers {
+        width: 100%;
+    }
 }
