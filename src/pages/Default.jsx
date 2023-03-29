@@ -4,6 +4,7 @@ import Container from "../components/container/Container";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/footer";
 import AboutUs from "./components/aboutUs/aboutUs";
+import ServicesOffer from "./components/ServicesOffer/ServicesOffer";
 
 import "../styles/default-page.css";
 
@@ -15,6 +16,9 @@ function DefaultPage() {
             </Container>
             <Container className="background-white">
                 <AboutUs />
+            </Container>
+            <Container>
+                <ServicesOffer />
             </Container>
             <Container className="background-black">
                 <Footer />
