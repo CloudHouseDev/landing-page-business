@@ -32,7 +32,7 @@ function ServicesOffer() {
                     <div className="wrapper-icon">
                         <CloudServerOutlined />
                     </div>
-                    <h4>Gerenciamento em Nuvem</h4>
+                    <h4>Gerenciamento em Nuvem & Hospedagem</h4>
                 </div>
                 <div className="box-service-offers">
                     <div className="wrapper-icon">

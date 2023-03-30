@@ -11,7 +11,7 @@ import "../styles/default-page.css";
 function DefaultPage() {
     return (
         <>
-            <Container className="background-black">
+            <Container className="background-black header-container">
                 <Header />
             </Container>
             <Container className="background-white">
