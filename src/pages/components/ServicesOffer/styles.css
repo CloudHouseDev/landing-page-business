@@ -82,7 +82,13 @@
     transform: translateZ(-1px);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1320px) {
+    .box-service-offers {
+        width: 300px;
+    }
+}
+
+@media (max-width: 1280px) {
     .box-service-offers {
         width: 250px;
     }
@@ -100,7 +106,7 @@
     }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 320px) {
     .box-service-offers h4 {
         font-size: 16px;
     }
