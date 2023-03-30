@@ -9,12 +9,14 @@ import {
     Html5Outlined,
 } from "@ant-design/icons";
 
+import SectionTitle from "../../../components/sectionTitle/sectionTitle";
+
 import "./styles.css";
 
 function ServicesOffer() {
     return (
         <section className="wrapper-services-offer-section">
-            {/*  <h2>Produtos e Serviços</h2> */}
+            <SectionTitle text="Produtos e Serviços" />
             <div className="content-services-offer">
                 <div className="box-service-offers">
                     <div className="wrapper-icon">
