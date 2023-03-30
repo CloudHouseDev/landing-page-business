@@ -13,7 +13,7 @@ function ModalMenu() {
     const dispatch = useDispatch();
 
     return (
-        <Container className="background-black">
+        <Container className="background-black header-container .wrapper-limit">
             <div className="modal-menu">
                 <header className="header-modal-menu">
                     <img src={CloudHouseIT} alt="Cloud House It logo" />
