@@ -38,7 +38,7 @@
 }
 
 .wrapper-section-title-items:hover div {
-    max-width: 400px;
+    max-width: 300px;
     transition: all ease-in-out 0.4s;
 }
 

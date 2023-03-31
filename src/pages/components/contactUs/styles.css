@@ -1,0 +1,80 @@
+.wrapper-contact-us-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.content-wrapper-asides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.content-wrapper-asides aside {
+    display: flex;
+    flex-direction: column;
+    /*  padding: 20px 0; */
+    border-radius: 5px;
+}
+
+.content-wrapper-asides aside:nth-child(1) {
+    flex: 0.6;
+    background-color: var(--white-400);
+}
+
+.content-wrapper-asides aside:nth-child(2) {
+    flex: 0.4;
+    background-color: var(--blue-400);
+}
+
+.personal-infos {
+    color: var(--white-400);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 20px;
+}
+
+.personal-info-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.personal-info-details span {
+    text-align: center;
+    max-width: 340px;
+    padding-left: 15px;
+    font-weight: 500;
+}
+
+.personal-info-details svg {
+    width: 26px;
+    height: 26px;
+    font-weight: 500;
+}
+
+.personal-info-details svg path {
+    fill: var(--white-400);
+}
+
+.wrapper-clickable-links {
+    display: flex;
+    align-self: center;
+    width: 100%;
+    border: 2px solid red;
+}
+
+.clickable-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    border: 2px solid green;
+}
