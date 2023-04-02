@@ -68,35 +68,49 @@ function ContactUs() {
                     </button>
                 </form>
                 <aside className="personal-infos">
-                    <div className="personal-info-details">
-                        <EnvironmentOutlined />
-                        <span>
-                            Rua Senador Salgado Filho, 548 - Bela Vista, São Jerônimo -
-                            RS, 96700-000
-                        </span>
-                    </div>
-                    <div className="personal-info-details">
-                        <PhoneOutlined />
-                        <span>(51) 995408445</span>
-                    </div>
-                    <div className="personal-info-details">
-                        <MailOutlined />
-                        <span>cloudhousegls@gmail.com</span>
-                    </div>
-                    {/*   <div className="wrapper-clickable-links">
-                        <a className="clickable-links" href="opa">
-                            <div>
-                                <WhatsAppOutlined />
-                            </div>
-                            <span>WhatsApp</span>
-                        </a>
-                        <a className="clickable-links" href="opa">
-                            <div>
-                                <MailOutlined />
-                            </div>
-                            <span>E-mail</span>
-                        </a>
-                    </div> */}
+                    <>
+                        <div className="personal-info-details">
+                            <EnvironmentOutlined />
+                            <span>
+                                Rua Senador Salgado Filho, 548 - Bela Vista, São Jerônimo
+                                - RS, 96700-000
+                            </span>
+                        </div>
+                        <div className="personal-info-details">
+                            <PhoneOutlined />
+                            <span>(51) 995408445</span>
+                        </div>
+                        <div className="personal-info-details">
+                            <MailOutlined />
+                            <span>cloudhousegls@gmail.com</span>
+                        </div>
+                        <div className="wrapper-clickable-links">
+                            <a
+                                className="clickable-links"
+                                href="https://wa.me/5551995408445"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <WhatsAppOutlined
+                                    style={{
+                                        color: "white",
+                                        background: "#25d366",
+                                        borderRadius: "100%",
+                                    }}
+                                />
+                                <span>WhatsApp</span>
+                            </a>
+                            <a
+                                className="clickable-links"
+                                href="mailto:cloudhousegls@gmail.com"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <MailOutlined className="email-icon-style" />
+                                <span>E-mail</span>
+                            </a>
+                        </div>
+                    </>
                 </aside>
             </div>
         </section>
