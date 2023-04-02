@@ -163,6 +163,7 @@
     font-size: 15px;
     font-weight: 500;
     color: var(--grey-400);
+    cursor: pointer;
 }
 
 .wrapper-inputs div input {
@@ -173,9 +174,18 @@
     width: 100%;
     border: none;
     margin-top: 10px;
-    padding-left: 5px;
+    padding-left: 8px;
     border-radius: 5px;
     border: 2px solid var(--grey-300);
+    transition: 0.5s;
+}
+
+.wrapper-inputs div input:focus {
+    border-color: var(--blue-800);
+}
+
+.wrapper-inputs div input:hover {
+    border-color: var(--blue-800);
 }
 
 .wrapper-inputs div input::placeholder {
@@ -196,10 +206,18 @@
     border: none;
     margin-top: 10px;
     padding-top: 10px;
-    padding-left: 5px;
+    padding-left: 8px;
     border-radius: 5px;
     border: 2px solid var(--grey-300);
     resize: none;
+    transition: 0.5s;
+}
+.wrapper-inputs div textarea:focus {
+    border-color: var(--blue-800);
+}
+
+.wrapper-inputs div textarea:hover {
+    border-color: var(--blue-800);
 }
 
 .wrapper-inputs div textarea::placeholder {
