@@ -62,6 +62,14 @@ a {
     cursor: pointer;
 }
 
+input,
+textarea,
+button,
+a,
+span {
+    font-family: var(--font-family);
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 0;
