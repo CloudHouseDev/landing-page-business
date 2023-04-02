@@ -162,7 +162,7 @@
 .wrapper-inputs div label {
     font-size: 15px;
     font-weight: 500;
-    color: var(--grey-500);
+    color: var(--grey-400);
 }
 
 .wrapper-inputs div input {
@@ -181,7 +181,7 @@
 .wrapper-inputs div input::placeholder {
     font-size: 14px;
     font-weight: 500;
-    color: var(--grey-400);
+    color: var(--grey-500);
 }
 
 .wrapper-inputs div textarea {
@@ -194,6 +194,7 @@
     min-height: 150px;
     max-height: 240px;
     border: none;
+    margin-top: 10px;
     padding-top: 10px;
     padding-left: 5px;
     border-radius: 5px;
@@ -204,7 +205,14 @@
 .wrapper-inputs div textarea::placeholder {
     font-size: 14px;
     font-weight: 500;
-    color: var(--grey-400);
+    color: var(--grey-500);
+}
+
+.input-required label::after {
+    position: absolute;
+    content: "*";
+    color: red;
+    margin-left: 5px;
 }
 
 @media (max-width: 2560px) {

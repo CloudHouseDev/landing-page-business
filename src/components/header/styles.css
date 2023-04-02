@@ -10,6 +10,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.3);
+    transition: 1s;
 }
 
 .header-limit {

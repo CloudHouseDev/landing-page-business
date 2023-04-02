@@ -56,8 +56,8 @@ function ModalMenu() {
                         Contato
                     </a>
                 </div>
+                <Footer />
             </div>
-            <Footer />
         </div>
     );
 }

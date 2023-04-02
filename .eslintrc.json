@@ -19,6 +19,7 @@
         "jsx-a11y/no-noninteractive-element-interactions": "off",
         "jsx-a11y/click-events-have-key-events": "off",
         "react/jsx-no-useless-fragment": "off",
+        "no-useless-escape": "off",
         "jsx-a11y/label-has-associated-control": [
             "error",
             {
