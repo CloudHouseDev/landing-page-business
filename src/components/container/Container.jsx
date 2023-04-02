@@ -4,21 +4,23 @@ import classNames from "classnames";
 
 import "./styles.css";
 
-function Container({ children, className }) {
+function Container({ children, className, sectionId }) {
     return (
-        <div className={classNames("wrapper-container", className)}>
+        <section className={classNames("wrapper-container", className)} id={sectionId}>
             <div className="wrapper-limit">{children}</div>
-        </div>
+        </section>
     );
 }
 
 export default Container;
 
 Container.propTypes = {
+    sectionId: PropTypes.string,
     className: PropTypes.string,
     children: PropTypes.oneOfType([PropTypes.elementType, PropTypes.node]).isRequired,
 };
 
 Container.defaultProps = {
     className: "",
+    sectionId: "",
 };

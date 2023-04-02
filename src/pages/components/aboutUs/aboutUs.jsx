@@ -1,11 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import "./styles.css";
 
-function AboutUs({ sectionId }) {
+function AboutUs() {
     return (
-        <section className="wrapper-about-us-section" id={sectionId}>
+        <div className="wrapper-about-us-section">
             <div className="box">
                 <strong>Missão</strong>
                 <br />
@@ -33,12 +32,8 @@ function AboutUs({ sectionId }) {
                     desenvolvemos o nosso trabalho.
                 </span>
             </div>
-        </section>
+        </div>
     );
 }
 
 export default AboutUs;
-
-AboutUs.propTypes = {
-    sectionId: PropTypes.string.isRequired,
-};

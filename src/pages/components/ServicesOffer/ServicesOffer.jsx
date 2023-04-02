@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+
 import {
     WechatFilled,
     ApartmentOutlined,
@@ -14,9 +14,9 @@ import SectionTitle from "../../../components/sectionTitle/sectionTitle";
 
 import "./styles.css";
 
-function ServicesOffer({ sectionId }) {
+function ServicesOffer() {
     return (
-        <section className="wrapper-services-offer-section" id={sectionId}>
+        <div className="wrapper-services-offer-section">
             <SectionTitle text="Produtos e Serviços" />
             <div className="content-services-offer">
                 <div className="box-service-offers">
@@ -62,12 +62,8 @@ function ServicesOffer({ sectionId }) {
                     <h4>Análise de Sistemas e Testes Automatizados</h4>
                 </div>
             </div>
-        </section>
+        </div>
     );
 }
 
 export default ServicesOffer;
-
-ServicesOffer.propTypes = {
-    sectionId: PropTypes.string.isRequired,
-};

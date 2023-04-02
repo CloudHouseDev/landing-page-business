@@ -12,17 +12,15 @@ import "../styles/default-page.css";
 function DefaultPage() {
     return (
         <>
-            <Container className="background-black header-container">
-                <Header />
+            <Header />
+            <Container className="background-white" sectionId="section-about-us">
+                <AboutUs />
             </Container>
-            <Container className="background-white">
-                <AboutUs sectionId="section-about-us" />
+            <Container sectionId="section-services">
+                <ServicesOffer />
             </Container>
-            <Container>
-                <ServicesOffer sectionId="section-services" />
-            </Container>
-            <Container className="background-white">
-                <ContactUs sectionId="section-contact" />
+            <Container className="background-white" sectionId="section-contact">
+                <ContactUs />
             </Container>
             <Container className="background-black">
                 <Footer />
