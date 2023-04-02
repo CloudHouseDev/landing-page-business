@@ -27,32 +27,36 @@ function ModalMenu() {
                         <div className="nav-bottom-modal-menu" />
                     </button>
                 </header>
-                <ul className="wrapper-naves-modal-menu">
-                    <li
+                <div className="wrapper-naves-modal-menu">
+                    <a
                         className="nav-modal-menu"
+                        href="#section-home"
                         onClick={() => dispatch(changeValue())}
                     >
                         Home
-                    </li>
-                    <li
+                    </a>
+                    <a
                         className="nav-modal-menu"
+                        href="#section-about-us"
                         onClick={() => dispatch(changeValue())}
                     >
                         Sobre Nós
-                    </li>
-                    <li
+                    </a>
+                    <a
                         className="nav-modal-menu"
+                        href="#section-services"
                         onClick={() => dispatch(changeValue())}
                     >
                         Produtos e Serviços
-                    </li>
-                    <li
+                    </a>
+                    <a
                         className="nav-modal-menu"
+                        href="#section-contact"
                         onClick={() => dispatch(changeValue())}
                     >
                         Contato
-                    </li>
-                </ul>
+                    </a>
+                </div>
                 <Footer />
             </div>
         </Container>

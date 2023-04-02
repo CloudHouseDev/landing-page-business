@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
     WechatFilled,
     ApartmentOutlined,
@@ -13,9 +14,9 @@ import SectionTitle from "../../../components/sectionTitle/sectionTitle";
 
 import "./styles.css";
 
-function ServicesOffer() {
+function ServicesOffer({ sectionId }) {
     return (
-        <section className="wrapper-services-offer-section">
+        <section className="wrapper-services-offer-section" id={sectionId}>
             <SectionTitle text="Produtos e Serviços" />
             <div className="content-services-offer">
                 <div className="box-service-offers">
@@ -66,3 +67,7 @@ function ServicesOffer() {
 }
 
 export default ServicesOffer;
+
+ServicesOffer.propTypes = {
+    sectionId: PropTypes.string.isRequired,
+};

@@ -16,13 +16,13 @@ function DefaultPage() {
                 <Header />
             </Container>
             <Container className="background-white">
-                <AboutUs />
+                <AboutUs sectionId="section-about-us" />
             </Container>
             <Container>
-                <ServicesOffer />
+                <ServicesOffer sectionId="section-services" />
             </Container>
             <Container className="background-white">
-                <ContactUs />
+                <ContactUs sectionId="section-contact" />
             </Container>
             <Container className="background-black">
                 <Footer />

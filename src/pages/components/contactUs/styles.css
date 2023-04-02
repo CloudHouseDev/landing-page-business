@@ -289,6 +289,7 @@
     .personal-info-details span {
         font-size: 14px;
         text-align: center;
+        padding-top: 4px;
     }
     .personal-info-details svg {
         width: 23px;

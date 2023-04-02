@@ -19,12 +19,20 @@ function Header() {
             <img src={CloudHouseIT} alt="Cloud House It logo" />
 
             {currentSize.width > defaultMediaQueries.LAPTOP_IN_PX ? (
-                <ul className="wrapper-nav">
-                    <li className="nav">Home</li>
-                    <li className="nav">Sobre Nós</li>
-                    <li className="nav">Produtos e Serviços</li>
-                    <li className="nav">Contato</li>
-                </ul>
+                <div className="wrapper-nav">
+                    <a className="nav" href="#section-home">
+                        home
+                    </a>
+                    <a className="nav" href="#section-about-us">
+                        Sobre Nós
+                    </a>
+                    <a className="nav" href="#section-services">
+                        Produtos e Serviços
+                    </a>
+                    <a className="nav" href="#section-contact">
+                        Contato
+                    </a>
+                </div>
             ) : (
                 <button
                     type="button"

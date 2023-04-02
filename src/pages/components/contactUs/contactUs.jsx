@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import {
     EnvironmentOutlined,
@@ -12,9 +13,9 @@ import SectionTitle from "../../../components/sectionTitle/sectionTitle";
 
 import "./styles.css";
 
-function ContactUs() {
+function ContactUs({ sectionId }) {
     return (
-        <section className="wrapper-contact-us-section">
+        <section className="wrapper-contact-us-section" id={sectionId}>
             <SectionTitle text="Contato" />
             <div className="content-wrapper-asides">
                 <form className="contact-infos">
@@ -122,3 +123,7 @@ function ContactUs() {
 }
 
 export default ContactUs;
+
+ContactUs.propTypes = {
+    sectionId: PropTypes.string.isRequired,
+};
