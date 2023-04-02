@@ -26,8 +26,6 @@
 
 .content-wrapper-asides form {
     flex: 0.7;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
 }
 
 .content-wrapper-asides aside {
@@ -119,11 +117,11 @@
     border: none;
     width: 100%;
     max-width: 140px;
-    align-self: flex-end;
     border-radius: 5px;
     background: var(--blue-400);
     border-radius: 5px;
-    margin-right: 40px;
+    align-items: flex-end;
+    align-self: flex-end;
     height: 60px;
     display: flex;
     align-items: center;
@@ -158,6 +156,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    margin-right: 15px;
 }
 
 .wrapper-inputs div label {
@@ -171,7 +170,7 @@
     font-weight: 500;
     color: var(--grey-400);
     height: 50px;
-    width: 90%;
+    width: 100%;
     border: none;
     margin-top: 10px;
     padding-left: 5px;
@@ -190,7 +189,7 @@
     font-weight: 500;
     color: var(--grey-400);
     height: 50px;
-    width: 95%;
+    width: 100%;
     height: 100%;
     min-height: 150px;
     max-height: 240px;
@@ -199,6 +198,7 @@
     padding-left: 5px;
     border-radius: 5px;
     border: 2px solid var(--grey-300);
+    resize: none;
 }
 
 .wrapper-inputs div textarea::placeholder {
@@ -208,13 +208,123 @@
 }
 
 @media (max-width: 2560px) {
-    .wrapper-inputs div textarea {
+    .wrapper-inputs {
         max-width: 1287px;
     }
 }
 
 @media (max-width: 1920px) {
-    .wrapper-inputs div textarea {
+    .wrapper-inputs {
         max-width: 947px;
+    }
+}
+
+@media (max-width: 1690px) {
+    .personal-info-details span {
+        padding-left: 10px;
+        text-align: start;
+    }
+}
+
+@media (max-width: 1024px) {
+    .content-wrapper-asides {
+        flex-direction: column;
+    }
+    .contact-infos {
+        width: 100%;
+    }
+
+    .content-wrapper-asides aside {
+        border-radius: 5px;
+    }
+
+    .personal-info-details span {
+        padding-left: 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 700px) {
+    .wrapper-clickable-links {
+        justify-content: space-around;
+    }
+    .content-wrapper-asides {
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 625px) {
+    .wrapper-inputs {
+        flex-direction: column;
+        margin: 0;
+        width: 100%;
+    }
+    .wrapper-inputs div {
+        flex-direction: column;
+        margin: 0;
+        margin: 10px 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 560px) {
+    .personal-info-details span {
+        padding-left: 10px;
+        text-align: start;
+    }
+}
+
+@media (max-width: 375px) {
+    .personal-info-details {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        width: 100%;
+    }
+
+    .wrapper-clickable-links span {
+        font-size: 15px;
+    }
+    .personal-info-details span {
+        font-size: 14px;
+        text-align: center;
+    }
+    .personal-info-details svg {
+        width: 23px;
+        height: 23px;
+    }
+    .button-submit {
+        max-width: 100px;
+        height: 50px;
+
+        line-height: 14px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 355px) {
+    .personal-info-details span {
+        padding-left: 0;
+    }
+    .wrapper-clickable-links span {
+        font-size: 14px;
+        white-space: nowrap;
+    }
+    .wrapper-inputs div label {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 250px) {
+    .wrapper-clickable-links {
+        justify-content: space-between;
+        flex-direction: column-reverse;
+        padding: 0;
+        margin: 0;
+    }
+    .clickable-links {
+        margin: 0;
+        margin-top: 10px;
     }
 }

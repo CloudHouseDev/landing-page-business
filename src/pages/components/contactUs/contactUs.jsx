@@ -63,9 +63,13 @@ function ContactUs() {
                             />
                         </div>
                     </div>
-                    <button type="button" className="button-submit">
-                        Enviar <CaretRightOutlined />
-                    </button>
+                    <div className="wrapper-inputs">
+                        <div>
+                            <button type="button" className="button-submit">
+                                Enviar <CaretRightOutlined />
+                            </button>
+                        </div>
+                    </div>
                 </form>
                 <aside className="personal-infos">
                     <>
