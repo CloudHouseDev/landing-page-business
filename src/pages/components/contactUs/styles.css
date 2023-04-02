@@ -289,6 +289,7 @@
     .personal-info-details span {
         font-size: 14px;
         text-align: center;
+        padding: 0;
         padding-top: 4px;
     }
     .personal-info-details svg {
@@ -305,9 +306,6 @@
 }
 
 @media (max-width: 355px) {
-    .personal-info-details span {
-        padding-left: 0;
-    }
     .wrapper-clickable-links span {
         font-size: 14px;
         white-space: nowrap;
