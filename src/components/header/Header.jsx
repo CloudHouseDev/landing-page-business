@@ -15,37 +15,38 @@ function Header() {
     const dispatch = useDispatch();
 
     return (
-        <header className="header">
-            <img src={CloudHouseIT} alt="Cloud House It logo" />
-
-            {currentSize.width > defaultMediaQueries.LAPTOP_IN_PX ? (
-                <div className="wrapper-nav">
-                    <a className="nav" href="#section-home">
-                        home
-                    </a>
-                    <a className="nav" href="#section-about-us">
-                        Sobre Nós
-                    </a>
-                    <a className="nav" href="#section-services">
-                        Produtos e Serviços
-                    </a>
-                    <a className="nav" href="#section-contact">
-                        Contato
-                    </a>
-                </div>
-            ) : (
-                <button
-                    type="button"
-                    className={classNames("container", {
-                        change: isOpen,
-                    })}
-                    onClick={() => dispatch(changeValue())}
-                >
-                    <div className="nav-top" />
-                    <div className="nav-center" />
-                    <div className="nav-bottom" />
-                </button>
-            )}
+        <header className="header-container">
+            <div className="header-limit">
+                <img src={CloudHouseIT} alt="Cloud House It logo" />
+                {currentSize.width > defaultMediaQueries.LAPTOP_IN_PX ? (
+                    <div className="wrapper-nav">
+                        <a className="nav" href="#section-home">
+                            Home
+                        </a>
+                        <a className="nav" href="#section-about-us">
+                            Sobre Nós
+                        </a>
+                        <a className="nav" href="#section-services">
+                            Produtos e Serviços
+                        </a>
+                        <a className="nav" href="#section-contact">
+                            Contato
+                        </a>
+                    </div>
+                ) : (
+                    <button
+                        type="button"
+                        className={classNames("container", {
+                            change: isOpen,
+                        })}
+                        onClick={() => dispatch(changeValue())}
+                    >
+                        <div className="nav-top" />
+                        <div className="nav-center" />
+                        <div className="nav-bottom" />
+                    </button>
+                )}
+            </div>
         </header>
     );
 }

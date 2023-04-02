@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import Container from "../container/Container";
 import Footer from "../footer/footer";
 import { changeValue } from "../../hooks/useShowingModalMenu";
 
@@ -13,8 +12,8 @@ function ModalMenu() {
     const dispatch = useDispatch();
 
     return (
-        <Container className="background-black header-container .wrapper-limit">
-            <div className="modal-menu">
+        <div className="modal-menu-container">
+            <div className="modal-menu-container-limit">
                 <header className="header-modal-menu">
                     <img src={CloudHouseIT} alt="Cloud House It logo" />
                     <button
@@ -57,9 +56,9 @@ function ModalMenu() {
                         Contato
                     </a>
                 </div>
-                <Footer />
             </div>
-        </Container>
+            <Footer />
+        </div>
     );
 }
 

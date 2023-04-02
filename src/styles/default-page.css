@@ -5,7 +5,3 @@
 .background-white {
     background-color: var(--white-400);
 }
-
-.header-container .wrapper-limit {
-    padding: 0 1rem;
-}

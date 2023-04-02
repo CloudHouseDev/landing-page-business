@@ -1,9 +1,18 @@
-.modal-menu {
+.modal-menu-container {
     min-height: 100vh;
     height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+
     background-color: var(--black-400);
+}
+
+.modal-menu-container-limit {
+    width: 80%;
+    height: 100%;
+    padding: 0 1rem;
+    flex-direction: column;
 }
 
 .header-modal-menu {
@@ -12,12 +21,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5px 0;
 }
 
 .header-modal-menu img {
     width: 60px;
-    height: 100%;
+    height: 60px;
 }
 
 .wrapper-naves-modal-menu {
