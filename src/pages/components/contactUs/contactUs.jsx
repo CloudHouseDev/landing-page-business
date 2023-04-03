@@ -1,6 +1,7 @@
 /* eslint-disable consistent-return */
 /* eslint-disable default-case */
 import React, { useReducer } from "react";
+import emailjs from "@emailjs/browser";
 
 import {
     EnvironmentOutlined,
@@ -15,7 +16,7 @@ import SectionTitle from "../../../components/sectionTitle/sectionTitle";
 import "./styles.css";
 
 function ContactUs() {
-    const [event, updateEvent] = useReducer(
+    const [value, updateEvent] = useReducer(
         (state, action) => {
             switch (action.type) {
                 case "setName": {
@@ -53,16 +54,48 @@ function ContactUs() {
         { name: "", email: "", subject: "", phone: "", message: "", errors: [{}] }
     );
 
+    function cleanUpInputs() {
+        updateEvent({ type: "setName", name: "" });
+        updateEvent({ type: "setEmail", email: "" });
+        updateEvent({ type: "setSubject", subject: "" });
+        updateEvent({ type: "setPhone", phone: "" });
+        updateEvent({ type: "setMessage", message: "" });
+    }
+
+    async function sendEmail(event) {
+        event.preventDefault();
+
+        const response = await emailjs.send(
+            "service_po35nhq",
+            "template_qkl21yl",
+            {
+                from_subject: value.subject,
+                from_name: value.name,
+                from_message: value.message,
+                from_phone: value.phone,
+                from_email: value.email,
+                reply_to: value.email,
+            },
+            "e10Y-nn5CZVKAP0d9"
+        );
+
+        if (response.status === 200) {
+            cleanUpInputs();
+        } else {
+            console.log("ERROUU", response);
+        }
+    }
+
     return (
         <div className="wrapper-contact-us-section">
             <SectionTitle text="Contato" />
             <div className="content-wrapper-asides">
-                <form className="contact-infos">
+                <form className="contact-infos" onSubmit={sendEmail}>
                     <div className="wrapper-inputs input-required">
                         <div>
                             <label htmlFor="nameInput">Nome</label>
                             <input
-                                value={event.name}
+                                value={value.name}
                                 onChange={({ target: { value } }) => {
                                     updateEvent({ type: "setName", name: value });
                                 }}
@@ -74,7 +107,7 @@ function ContactUs() {
                         <div>
                             <label htmlFor="emailInput">E-mail</label>
                             <input
-                                value={event.email}
+                                value={value.email}
                                 onChange={({ target: { value } }) => {
                                     updateEvent({ type: "setEmail", email: value });
                                 }}
@@ -88,7 +121,7 @@ function ContactUs() {
                         <div className="input-required">
                             <label htmlFor="subjectInput">Assunto</label>
                             <input
-                                value={event.subject}
+                                value={value.subject}
                                 onChange={({ target: { value } }) => {
                                     updateEvent({ type: "setSubject", subject: value });
                                 }}
@@ -100,7 +133,7 @@ function ContactUs() {
                         <div>
                             <label htmlFor="phoneNumberInput">Celular</label>
                             <input
-                                value={event.phone}
+                                value={value.phone}
                                 onChange={({ target: { value } }) => {
                                     updateEvent({ type: "setPhone", phone: value });
                                 }}
@@ -114,7 +147,7 @@ function ContactUs() {
                         <div>
                             <label htmlFor="messageInput">Mensagem</label>
                             <textarea
-                                value={event.message}
+                                value={value.message}
                                 onChange={({ target: { value } }) => {
                                     updateEvent({ type: "setMessage", message: value });
                                 }}
@@ -125,7 +158,7 @@ function ContactUs() {
                     </div>
                     <div className="wrapper-inputs">
                         <div>
-                            <button type="button" className="button-submit">
+                            <button type="submit" className="button-submit">
                                 Enviar <CaretRightOutlined />
                             </button>
                         </div>
