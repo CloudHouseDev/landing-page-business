@@ -175,9 +175,16 @@
     border: none;
     margin-top: 10px;
     padding-left: 8px;
-    border-radius: 5px;
-    border: 2px solid var(--grey-300);
     transition: 0.5s;
+    border-radius: 5px;
+}
+
+.wrapper-input-common div input {
+    border: 2px solid var(--grey-300);
+}
+
+.wrapper-inputs .wrapper-input-error {
+    border: 2px solid red;
 }
 
 .wrapper-inputs div input:focus {
@@ -210,10 +217,18 @@
     padding-top: 10px;
     padding-left: 8px;
     border-radius: 5px;
-    border: 2px solid var(--grey-300);
     resize: none;
     transition: 0.5s;
 }
+
+.wrapper-textarea-common div textarea {
+    border: 2px solid var(--grey-300);
+}
+
+.wrapper-textarea-error div textarea {
+    border: 2px solid red;
+}
+
 .wrapper-inputs div textarea:focus {
     transition: 0.5s;
     border-color: var(--blue-800);

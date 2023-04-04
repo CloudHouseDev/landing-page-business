@@ -2,6 +2,7 @@
 /* eslint-disable default-case */
 import React, { useReducer } from "react";
 import emailjs from "@emailjs/browser";
+import classNames from "classnames";
 
 import {
     EnvironmentOutlined,
@@ -16,26 +17,88 @@ import SectionTitle from "../../../components/sectionTitle/sectionTitle";
 import "./styles.css";
 
 function ContactUs() {
-    const validations = {};
+    const validationSchema = {
+        isNameInvalid: /[0-9!@#$%^&*()_+{}\[\]:;<>,.?/~`|-]/,
+        isEmailValid: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        hasInputSpecialChars: /[^a-zA-Z0-9 ]/,
+    };
 
-    const [value, updateEvent] = useReducer(
+    const [value, updateValue] = useReducer(
         (state, action) => {
+            console.log({ action, state });
             switch (action.type) {
                 case "setName": {
+                    if (validationSchema.isNameInvalid.test(action.name)) {
+                        return {
+                            ...state,
+                            name: action.name,
+                            errors: [
+                                ...state.errors.filter(
+                                    (error) => error?.fieldId !== "nameInput"
+                                ),
+                                { fieldId: "nameInput", message: "Nome não é válido" },
+                            ],
+                        };
+                    }
                     return {
                         ...state,
+                        errors: [
+                            ...state.errors.filter(
+                                (error) => error?.fieldId !== "nameInput"
+                            ),
+                        ],
                         name: action.name,
                     };
                 }
                 case "setEmail": {
+                    if (!validationSchema.isEmailValid.test(action.email)) {
+                        return {
+                            ...state,
+                            email: action.email,
+                            errors: [
+                                ...state.errors.filter(
+                                    (error) => error?.fieldId !== "emailInput"
+                                ),
+                                {
+                                    fieldId: "emailInput",
+                                    message: "E-mail informado não é válido",
+                                },
+                            ],
+                        };
+                    }
                     return {
                         ...state,
+                        errors: [
+                            ...state.errors.filter(
+                                (error) => error?.fieldId !== "emailInput"
+                            ),
+                        ],
                         email: action.email,
                     };
                 }
                 case "setSubject": {
+                    if (validationSchema.hasInputSpecialChars(action.subject)) {
+                        return {
+                            ...state,
+                            subject: action.subject,
+                            errors: [
+                                ...state.errors.filter(
+                                    (error) => error?.fieldId !== "subjectInput"
+                                ),
+                                {
+                                    fieldId: "subjectInput",
+                                    message: "Assunto informado não é válido",
+                                },
+                            ],
+                        };
+                    }
                     return {
                         ...state,
+                        errors: [
+                            ...state.errors.filter(
+                                (error) => error?.fieldId !== "subjectInput"
+                            ),
+                        ],
                         subject: action.subject,
                     };
                 }
@@ -53,15 +116,16 @@ function ContactUs() {
                 }
             }
         },
-        { name: "", email: "", subject: "", phone: "", message: "", errors: [{}] }
+        { name: "", email: "", subject: "", phone: "", message: "", errors: [] }
     );
 
+    console.log({ value });
     function cleanUpInputs() {
-        updateEvent({ type: "setName", name: "" });
-        updateEvent({ type: "setEmail", email: "" });
-        updateEvent({ type: "setSubject", subject: "" });
-        updateEvent({ type: "setPhone", phone: "" });
-        updateEvent({ type: "setMessage", message: "" });
+        updateValue({ type: "setName", name: "" });
+        updateValue({ type: "setEmail", email: "" });
+        updateValue({ type: "setSubject", subject: "" });
+        updateValue({ type: "setPhone", phone: "" });
+        updateValue({ type: "setMessage", message: "" });
     }
 
     async function sendEmail(event) {
@@ -70,6 +134,8 @@ function ContactUs() {
         const areThereErrors = value.errors.find(
             (element) => Object.values(element).length > 0
         );
+
+        console.log({ areThereErrors });
 
         if (!!areThereErrors && Object.values(areThereErrors).length > 0) {
             return;
@@ -105,13 +171,18 @@ function ContactUs() {
             <SectionTitle text="Contato" />
             <div className="content-wrapper-asides">
                 <form className="contact-infos" onSubmit={sendEmail}>
-                    <div className="wrapper-inputs input-required">
+                    <div className="wrapper-inputs input-required wrapper-input-common">
                         <div>
                             <label htmlFor="nameInput">Nome</label>
                             <input
+                                className={classNames({
+                                    "wrapper-input-error": value.errors?.find(
+                                        (error) => error?.fieldId === "nameInput"
+                                    ),
+                                })}
                                 value={value.name}
                                 onChange={({ target: { value } }) => {
-                                    updateEvent({ type: "setName", name: value });
+                                    updateValue({ type: "setName", name: value });
                                 }}
                                 type="text"
                                 placeholder="Ex.: Maria Antonia da Silva"
@@ -121,9 +192,14 @@ function ContactUs() {
                         <div>
                             <label htmlFor="emailInput">E-mail</label>
                             <input
+                                className={classNames({
+                                    "wrapper-input-error": value.errors?.find(
+                                        (error) => error?.fieldId === "emailInput"
+                                    ),
+                                })}
                                 value={value.email}
                                 onChange={({ target: { value } }) => {
-                                    updateEvent({ type: "setEmail", email: value });
+                                    updateValue({ type: "setEmail", email: value });
                                 }}
                                 type="email"
                                 placeholder="Ex.: seuemail@gmail.com"
@@ -131,13 +207,13 @@ function ContactUs() {
                             />
                         </div>
                     </div>
-                    <div className="wrapper-inputs">
+                    <div className="wrapper-inputs wrapper-input-common">
                         <div className="input-required">
                             <label htmlFor="subjectInput">Assunto</label>
                             <input
                                 value={value.subject}
                                 onChange={({ target: { value } }) => {
-                                    updateEvent({ type: "setSubject", subject: value });
+                                    updateValue({ type: "setSubject", subject: value });
                                 }}
                                 type="text"
                                 placeholder="Ex.: Site Corporativo"
@@ -149,7 +225,7 @@ function ContactUs() {
                             <input
                                 value={value.phone}
                                 onChange={({ target: { value } }) => {
-                                    updateEvent({ type: "setPhone", phone: value });
+                                    updateValue({ type: "setPhone", phone: value });
                                 }}
                                 type="text"
                                 placeholder="Ex.: (51) 99854-88190"
@@ -157,13 +233,13 @@ function ContactUs() {
                             />
                         </div>
                     </div>
-                    <div className="wrapper-inputs input-required">
+                    <div className="wrapper-inputs input-required wrapper-textarea-common">
                         <div>
                             <label htmlFor="messageInput">Mensagem</label>
                             <textarea
                                 value={value.message}
                                 onChange={({ target: { value } }) => {
-                                    updateEvent({ type: "setMessage", message: value });
+                                    updateValue({ type: "setMessage", message: value });
                                 }}
                                 id="messageInput"
                                 placeholder="Digite sua mensagem aqui"
