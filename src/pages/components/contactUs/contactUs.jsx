@@ -16,6 +16,8 @@ import SectionTitle from "../../../components/sectionTitle/sectionTitle";
 import "./styles.css";
 
 function ContactUs() {
+    const validations = {};
+
     const [value, updateEvent] = useReducer(
         (state, action) => {
             switch (action.type) {
@@ -64,6 +66,18 @@ function ContactUs() {
 
     async function sendEmail(event) {
         event.preventDefault();
+
+        const areThereErrors = value.errors.find(
+            (element) => Object.values(element).length > 0
+        );
+
+        if (!!areThereErrors && Object.values(areThereErrors).length > 0) {
+            return;
+        }
+
+        if (!value.name || !value.email || !value.subject || !value.message) {
+            return;
+        }
 
         const response = await emailjs.send(
             "service_po35nhq",

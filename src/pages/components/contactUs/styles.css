@@ -181,10 +181,12 @@
 }
 
 .wrapper-inputs div input:focus {
+    transition: 0.5s;
     border-color: var(--blue-800);
 }
 
 .wrapper-inputs div input:hover {
+    transition: 0.5s;
     border-color: var(--blue-800);
 }
 
@@ -213,10 +215,12 @@
     transition: 0.5s;
 }
 .wrapper-inputs div textarea:focus {
+    transition: 0.5s;
     border-color: var(--blue-800);
 }
 
 .wrapper-inputs div textarea:hover {
+    transition: 0.5s;
     border-color: var(--blue-800);
 }
 
