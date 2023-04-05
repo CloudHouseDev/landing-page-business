@@ -176,15 +176,19 @@ function ContactUs() {
             return;
         }
 
-        if (!value.name || !value.email || !value.subject || !value.message) {
-            if (!value.name) {
+        if (
+            value.name.length <= 0 ||
+            value.email.length <= 0 ||
+            value.subject.length <= 0 ||
+            value.message.length <= 0
+        ) {
+            if (value.name.length <= 0) {
                 updateValue({
                     type: "setError",
                     error: { fieldId: "nameInput", message: "Preencha o campo nome" },
                 });
             }
-
-            if (!value.email) {
+            if (value.email.length <= 0) {
                 updateValue({
                     type: "setError",
                     error: {
@@ -193,7 +197,7 @@ function ContactUs() {
                     },
                 });
             }
-            if (!value.subject) {
+            if (value.subject.length <= 0) {
                 updateValue({
                     type: "setError",
                     error: {
@@ -202,7 +206,7 @@ function ContactUs() {
                     },
                 });
             }
-            if (!value.message) {
+            if (value.message.length <= 0) {
                 updateValue({
                     type: "setError",
                     error: {
