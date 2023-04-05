@@ -144,12 +144,17 @@ function ContactUs() {
                         message: action.message,
                     };
                 }
+                case "setError": {
+                    return {
+                        ...state,
+                        errors: [...state.errors, action.error],
+                    };
+                }
             }
         },
         { name: "", email: "", subject: "", phone: "", message: "", errors: [] }
     );
 
-    console.log({ value });
     function cleanUpInputs() {
         updateValue({ type: "setName", name: "" });
         updateValue({ type: "setEmail", email: "" });
@@ -158,6 +163,8 @@ function ContactUs() {
         updateValue({ type: "setMessage", message: "" });
     }
 
+    console.log({ value });
+
     async function sendEmail(event) {
         event.preventDefault();
 
@@ -165,13 +172,45 @@ function ContactUs() {
             (element) => Object.values(element).length > 0
         );
 
-        console.log({ areThereErrors });
-
         if (!!areThereErrors && Object.values(areThereErrors).length > 0) {
             return;
         }
 
         if (!value.name || !value.email || !value.subject || !value.message) {
+            if (!value.name) {
+                updateValue({
+                    type: "setError",
+                    error: { fieldId: "nameInput", message: "Preencha o campo nome" },
+                });
+            }
+
+            if (!value.email) {
+                updateValue({
+                    type: "setError",
+                    error: {
+                        fieldId: "emailInput",
+                        message: "Preencha o campo E-mail",
+                    },
+                });
+            }
+            if (!value.subject) {
+                updateValue({
+                    type: "setError",
+                    error: {
+                        fieldId: "subjectInput",
+                        message: "Preencha o campo Assunto",
+                    },
+                });
+            }
+            if (!value.message) {
+                updateValue({
+                    type: "setError",
+                    error: {
+                        fieldId: "messageInput",
+                        message: "Preencha o campo Mensagem",
+                    },
+                });
+            }
             return;
         }
 
