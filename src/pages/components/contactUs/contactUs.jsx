@@ -1,6 +1,7 @@
 /* eslint-disable consistent-return */
 /* eslint-disable default-case */
-import React, { useReducer } from "react";
+import React, { useMemo, useReducer } from "react";
+import { AsYouType, isValidPhoneNumber, parseNumber } from "libphonenumber-js";
 import emailjs from "@emailjs/browser";
 import classNames from "classnames";
 
@@ -24,11 +25,13 @@ function ContactUs() {
         hasInputLetter: /[a-zA-Z]/,
     };
 
-    const phoneMaskBR = (phone) =>
-        phone
-            .replace(/\D/g, "")
-            .replace(/^(\d{2})(\d)/, "($1) $2")
-            .replace(/(\d{5})(\d)/, "$1-$2");
+    function phoneFormatter(phone) {
+        if (!phone) return "";
+
+        const formattedPhone = new AsYouType("BR").input(phone);
+
+        return formattedPhone;
+    }
 
     const [value, updateValue] = useReducer(
         (state, action) => {
@@ -42,7 +45,10 @@ function ContactUs() {
                                 ...state.errors.filter(
                                     (error) => error?.fieldId !== "nameInput"
                                 ),
-                                { fieldId: "nameInput", message: "preenche essa porra" },
+                                {
+                                    fieldId: "nameInput",
+                                    message: "Preencha o campo Nome",
+                                },
                             ],
                         };
                     }
@@ -78,7 +84,10 @@ function ContactUs() {
                                 ...state.errors.filter(
                                     (error) => error?.fieldId !== "emailInput"
                                 ),
-                                { fieldId: "emailInput", message: "preenche essa porra" },
+                                {
+                                    fieldId: "emailInput",
+                                    message: "Preencha o campo E-mail",
+                                },
                             ],
                         };
                     }
@@ -118,7 +127,7 @@ function ContactUs() {
                                 ),
                                 {
                                     fieldId: "subjectInput",
-                                    message: "preenche essa porra",
+                                    message: "Preencha o campo Assunto",
                                 },
                             ],
                         };
@@ -152,10 +161,27 @@ function ContactUs() {
                     if (validationSchema.hasInputLetter.test(action.phone)) {
                         return { ...state };
                     }
-                    if (action.phone.length !== 0 && action.phone.length !== 15) {
+
+                    if (!!action.phone && action.phone.length < 15) {
                         return {
                             ...state,
-                            phone: phoneMaskBR(action.phone),
+                            phone: phoneFormatter(action.phone),
+                            errors: [
+                                ...state.errors.filter(
+                                    (error) => error?.fieldId !== "phoneInput"
+                                ),
+                                {
+                                    fieldId: "phoneInput",
+                                    message: "Número informado não é válido",
+                                },
+                            ],
+                        };
+                    }
+
+                    if (!!action.phone && !isValidPhoneNumber(action.phone, "BR")) {
+                        return {
+                            ...state,
+                            phone: phoneFormatter(action.phone),
                             errors: [
                                 ...state.errors.filter(
                                     (error) => error?.fieldId !== "phoneInput"
@@ -169,12 +195,12 @@ function ContactUs() {
                     }
                     return {
                         ...state,
+                        phone: phoneFormatter(action.phone),
                         errors: [
                             ...state.errors.filter(
                                 (error) => error?.fieldId !== "phoneInput"
                             ),
                         ],
-                        phone: phoneMaskBR(action.phone),
                     };
                 }
                 case "setMessage": {
@@ -188,7 +214,7 @@ function ContactUs() {
                                 ),
                                 {
                                     fieldId: "messageInput",
-                                    message: "preenche essa porra",
+                                    message: "Preencha o campo Mensagem",
                                 },
                             ],
                         };
@@ -209,15 +235,38 @@ function ContactUs() {
         { name: "", email: "", subject: "", phone: "", message: "", errors: [] }
     );
 
+    const messageErrorFromPhoneInput = useMemo(
+        () => value.errors?.find((error) => error?.fieldId === "phoneInput")?.message,
+        [value]
+    );
+
+    const messageErrorFromEmailInput = useMemo(
+        () => value.errors?.find((error) => error?.fieldId === "emailInput")?.message,
+        [value]
+    );
+
+    const messageErrorFromNameInput = useMemo(
+        () => value.errors?.find((error) => error?.fieldId === "nameInput")?.message,
+        [value]
+    );
+
+    const messageErrorFromSubjectInput = useMemo(
+        () => value.errors?.find((error) => error?.fieldId === "subjectInput")?.message,
+        [value]
+    );
+
+    const messageErrorFromMessageInput = useMemo(
+        () => value.errors?.find((error) => error?.fieldId === "messageInput")?.message,
+        [value]
+    );
+
     function cleanUpInputs() {
         updateValue({ type: "setName", name: "" });
+        updateValue({ type: "setPhone", phone: "" });
         updateValue({ type: "setEmail", email: "" });
         updateValue({ type: "setSubject", subject: "" });
-        updateValue({ type: "setPhone", phone: "" });
         updateValue({ type: "setMessage", message: "" });
     }
-
-    console.log({ value });
 
     async function sendEmail(event) {
         event.preventDefault();
@@ -239,7 +288,7 @@ function ContactUs() {
             if (value.name.length <= 0) {
                 updateValue({
                     type: "setError",
-                    error: { fieldId: "nameInput", message: "Preencha o campo nome" },
+                    error: { fieldId: "nameInput", message: "Preencha o campo Nome" },
                 });
             }
             if (value.email.length <= 0) {
@@ -297,11 +346,12 @@ function ContactUs() {
         <div className="wrapper-contact-us-section">
             <SectionTitle text="Contato" />
             <div className="content-wrapper-asides">
-                <form className="contact-infos" onSubmit={sendEmail}>
+                <form className="contact-infos" onSubmit={sendEmail} autoComplete="off">
                     <div className="wrapper-inputs input-required wrapper-input-common">
                         <div>
                             <label htmlFor="nameInput">Nome</label>
                             <input
+                                autoComplete="none"
                                 className={classNames({
                                     "wrapper-input-error": value.errors?.find(
                                         (error) => error?.fieldId === "nameInput"
@@ -315,10 +365,16 @@ function ContactUs() {
                                 placeholder="Ex.: Maria Antonia da Silva"
                                 id="nameInput"
                             />
+                            {messageErrorFromNameInput ? (
+                                <span>{messageErrorFromNameInput}</span>
+                            ) : (
+                                <></>
+                            )}
                         </div>
                         <div>
                             <label htmlFor="emailInput">E-mail</label>
                             <input
+                                autoComplete="none"
                                 className={classNames({
                                     "wrapper-input-error": value.errors?.find(
                                         (error) => error?.fieldId === "emailInput"
@@ -328,16 +384,22 @@ function ContactUs() {
                                 onChange={({ target: { value } }) => {
                                     updateValue({ type: "setEmail", email: value });
                                 }}
-                                type="email"
+                                type="text"
                                 placeholder="Ex.: seuemail@gmail.com"
                                 id="emailInput"
                             />
+                            {messageErrorFromEmailInput ? (
+                                <span>{messageErrorFromEmailInput}</span>
+                            ) : (
+                                <></>
+                            )}
                         </div>
                     </div>
                     <div className="wrapper-inputs wrapper-input-common">
                         <div className="input-required">
                             <label htmlFor="subjectInput">Assunto</label>
                             <input
+                                autoComplete="none"
                                 value={value.subject}
                                 className={classNames({
                                     "wrapper-input-error": value.errors?.find(
@@ -351,10 +413,16 @@ function ContactUs() {
                                 placeholder="Ex.: Site Corporativo"
                                 id="subjectInput"
                             />
+                            {messageErrorFromSubjectInput ? (
+                                <span>{messageErrorFromSubjectInput}</span>
+                            ) : (
+                                <></>
+                            )}
                         </div>
                         <div>
                             <label htmlFor="phoneNumberInput">Celular</label>
                             <input
+                                autoComplete="none"
                                 value={value.phone}
                                 maxLength={15}
                                 className={classNames({
@@ -363,18 +431,28 @@ function ContactUs() {
                                     ),
                                 })}
                                 onChange={({ target: { value } }) => {
-                                    updateValue({ type: "setPhone", phone: value });
+                                    updateValue({
+                                        type: "setPhone",
+                                        phone: phoneFormatter(value),
+                                    });
                                 }}
                                 type="text"
                                 placeholder="Ex.: (51) 98654-7460"
                                 id="phoneNumberInput"
                             />
+
+                            {messageErrorFromPhoneInput ? (
+                                <span>{messageErrorFromPhoneInput}</span>
+                            ) : (
+                                <></>
+                            )}
                         </div>
                     </div>
                     <div className="wrapper-inputs input-required wrapper-textarea-common">
                         <div>
                             <label htmlFor="messageInput">Mensagem</label>
                             <textarea
+                                autoComplete="none"
                                 value={value.message}
                                 className={classNames({
                                     "wrapper-textarea-error": value.errors?.find(
@@ -387,6 +465,11 @@ function ContactUs() {
                                 id="messageInput"
                                 placeholder="Digite sua mensagem aqui"
                             />
+                            {messageErrorFromMessageInput ? (
+                                <span>{messageErrorFromMessageInput}</span>
+                            ) : (
+                                <></>
+                            )}
                         </div>
                     </div>
                     <div className="wrapper-inputs">
