@@ -34,6 +34,19 @@ function ContactUs() {
         (state, action) => {
             switch (action.type) {
                 case "setName": {
+                    if (!action.name) {
+                        return {
+                            ...state,
+                            name: action.name,
+                            errors: [
+                                ...state.errors.filter(
+                                    (error) => error?.fieldId !== "nameInput"
+                                ),
+                                { fieldId: "nameInput", message: "preenche essa porra" },
+                            ],
+                        };
+                    }
+
                     if (validationSchema.isNameInvalid.test(action.name)) {
                         return {
                             ...state,
@@ -57,6 +70,18 @@ function ContactUs() {
                     };
                 }
                 case "setEmail": {
+                    if (!action.email) {
+                        return {
+                            ...state,
+                            email: action.email,
+                            errors: [
+                                ...state.errors.filter(
+                                    (error) => error?.fieldId !== "emailInput"
+                                ),
+                                { fieldId: "emailInput", message: "preenche essa porra" },
+                            ],
+                        };
+                    }
                     if (!validationSchema.isEmailInvalid.test(action.email)) {
                         return {
                             ...state,
@@ -83,6 +108,21 @@ function ContactUs() {
                     };
                 }
                 case "setSubject": {
+                    if (!action.subject) {
+                        return {
+                            ...state,
+                            subject: action.subject,
+                            errors: [
+                                ...state.errors.filter(
+                                    (error) => error?.fieldId !== "subjectInput"
+                                ),
+                                {
+                                    fieldId: "subjectInput",
+                                    message: "preenche essa porra",
+                                },
+                            ],
+                        };
+                    }
                     if (validationSchema.hasInputSpecialChars.test(action.subject)) {
                         return {
                             ...state,
@@ -127,7 +167,6 @@ function ContactUs() {
                             ],
                         };
                     }
-
                     return {
                         ...state,
                         errors: [
@@ -139,6 +178,21 @@ function ContactUs() {
                     };
                 }
                 case "setMessage": {
+                    if (!action.message) {
+                        return {
+                            ...state,
+                            message: action.message,
+                            errors: [
+                                ...state.errors.filter(
+                                    (error) => error?.fieldId !== "messageInput"
+                                ),
+                                {
+                                    fieldId: "messageInput",
+                                    message: "preenche essa porra",
+                                },
+                            ],
+                        };
+                    }
                     return {
                         ...state,
                         message: action.message,
