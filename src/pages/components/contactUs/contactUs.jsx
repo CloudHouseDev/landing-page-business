@@ -19,13 +19,19 @@ import "./styles.css";
 function ContactUs() {
     const validationSchema = {
         isNameInvalid: /[0-9!@#$%^&*()_+{}\[\]:;<>,.?/~`|-]/,
-        isEmailValid: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        isEmailInvalid: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
         hasInputSpecialChars: /[^a-zA-Z0-9 ]/,
+        hasInputLetter: /[a-zA-Z]/,
     };
+
+    const phoneMaskBR = (phone) =>
+        phone
+            .replace(/\D/g, "")
+            .replace(/^(\d{2})(\d)/, "($1) $2")
+            .replace(/(\d{5})(\d)/, "$1-$2");
 
     const [value, updateValue] = useReducer(
         (state, action) => {
-            console.log({ action, state });
             switch (action.type) {
                 case "setName": {
                     if (validationSchema.isNameInvalid.test(action.name)) {
@@ -51,7 +57,7 @@ function ContactUs() {
                     };
                 }
                 case "setEmail": {
-                    if (!validationSchema.isEmailValid.test(action.email)) {
+                    if (!validationSchema.isEmailInvalid.test(action.email)) {
                         return {
                             ...state,
                             email: action.email,
@@ -77,7 +83,7 @@ function ContactUs() {
                     };
                 }
                 case "setSubject": {
-                    if (validationSchema.hasInputSpecialChars(action.subject)) {
+                    if (validationSchema.hasInputSpecialChars.test(action.subject)) {
                         return {
                             ...state,
                             subject: action.subject,
@@ -103,9 +109,33 @@ function ContactUs() {
                     };
                 }
                 case "setPhone": {
+                    if (validationSchema.hasInputLetter.test(action.phone)) {
+                        return { ...state };
+                    }
+                    if (action.phone.length !== 0 && action.phone.length !== 15) {
+                        return {
+                            ...state,
+                            phone: phoneMaskBR(action.phone),
+                            errors: [
+                                ...state.errors.filter(
+                                    (error) => error?.fieldId !== "phoneInput"
+                                ),
+                                {
+                                    fieldId: "phoneInput",
+                                    message: "Número informado não é válido",
+                                },
+                            ],
+                        };
+                    }
+
                     return {
                         ...state,
-                        phone: action.phone,
+                        errors: [
+                            ...state.errors.filter(
+                                (error) => error?.fieldId !== "phoneInput"
+                            ),
+                        ],
+                        phone: phoneMaskBR(action.phone),
                     };
                 }
                 case "setMessage": {
@@ -212,6 +242,11 @@ function ContactUs() {
                             <label htmlFor="subjectInput">Assunto</label>
                             <input
                                 value={value.subject}
+                                className={classNames({
+                                    "wrapper-input-error": value.errors?.find(
+                                        (error) => error?.fieldId === "subjectInput"
+                                    ),
+                                })}
                                 onChange={({ target: { value } }) => {
                                     updateValue({ type: "setSubject", subject: value });
                                 }}
@@ -224,11 +259,17 @@ function ContactUs() {
                             <label htmlFor="phoneNumberInput">Celular</label>
                             <input
                                 value={value.phone}
+                                maxLength={15}
+                                className={classNames({
+                                    "wrapper-input-error": value.errors?.find(
+                                        (error) => error?.fieldId === "phoneInput"
+                                    ),
+                                })}
                                 onChange={({ target: { value } }) => {
                                     updateValue({ type: "setPhone", phone: value });
                                 }}
                                 type="text"
-                                placeholder="Ex.: (51) 99854-88190"
+                                placeholder="Ex.: (51) 98654-7460"
                                 id="phoneNumberInput"
                             />
                         </div>
@@ -238,6 +279,11 @@ function ContactUs() {
                             <label htmlFor="messageInput">Mensagem</label>
                             <textarea
                                 value={value.message}
+                                className={classNames({
+                                    "wrapper-textarea-error": value.errors?.find(
+                                        (error) => error?.fieldId === "messageInput"
+                                    ),
+                                })}
                                 onChange={({ target: { value } }) => {
                                     updateValue({ type: "setMessage", message: value });
                                 }}
