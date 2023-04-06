@@ -359,6 +359,10 @@
         width: 100%;
     }
 
+    .message-error span {
+        font-size: 13px;
+    }
+
     .wrapper-clickable-links span {
         font-size: 15px;
     }
@@ -401,5 +405,8 @@
     .clickable-links {
         margin: 0;
         margin-top: 10px;
+    }
+    .message-error span {
+        font-size: 12px;
     }
 }

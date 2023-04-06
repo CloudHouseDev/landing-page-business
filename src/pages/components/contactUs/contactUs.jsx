@@ -348,7 +348,7 @@ function ContactUs() {
             <div className="content-wrapper-asides">
                 <form className="contact-infos" onSubmit={sendEmail} autoComplete="off">
                     <div className="wrapper-inputs input-required wrapper-input-common">
-                        <div>
+                        <div className="wrapper-content-inputs">
                             <label htmlFor="nameInput">Nome</label>
                             <input
                                 autoComplete="none"
@@ -376,7 +376,7 @@ function ContactUs() {
                                 <></>
                             )}
                         </div>
-                        <div>
+                        <div className="wrapper-content-inputs">
                             <label htmlFor="emailInput">E-mail</label>
                             <input
                                 autoComplete="none"
@@ -406,7 +406,7 @@ function ContactUs() {
                         </div>
                     </div>
                     <div className="wrapper-inputs wrapper-input-common">
-                        <div className="input-required">
+                        <div className="input-required wrapper-content-inputs">
                             <label htmlFor="subjectInput">Assunto</label>
                             <input
                                 autoComplete="none"
@@ -434,7 +434,7 @@ function ContactUs() {
                                 <></>
                             )}
                         </div>
-                        <div>
+                        <div className="wrapper-content-inputs">
                             <label htmlFor="phoneNumberInput">Celular</label>
                             <input
                                 autoComplete="none"
@@ -469,7 +469,7 @@ function ContactUs() {
                         </div>
                     </div>
                     <div className="wrapper-inputs input-required wrapper-textarea-common">
-                        <div>
+                        <div className="wrapper-content-inputs">
                             <label htmlFor="messageInput">Mensagem</label>
                             <textarea
                                 autoComplete="none"
@@ -498,7 +498,7 @@ function ContactUs() {
                         </div>
                     </div>
                     <div className="wrapper-inputs">
-                        <div>
+                        <div className="wrapper-content-inputs">
                             <button type="submit" className="button-submit">
                                 Enviar <CaretRightOutlined />
                             </button>
