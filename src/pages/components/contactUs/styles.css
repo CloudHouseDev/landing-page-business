@@ -151,7 +151,7 @@
     width: 100%;
 }
 
-.wrapper-inputs div {
+.wrapper-content-inputs {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -160,14 +160,14 @@
     margin-right: 15px;
 }
 
-.wrapper-inputs div label {
+.wrapper-content-inputs label {
     font-size: 15px;
     font-weight: 500;
     color: var(--grey-400);
     cursor: pointer;
 }
 
-.wrapper-inputs div input {
+.wrapper-content-inputs input {
     font-size: 14px;
     font-weight: 500;
     color: var(--grey-400);
@@ -184,27 +184,57 @@
     border: 2px solid var(--grey-300);
 }
 
+.message-error {
+    justify-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px 20px;
+    flex: 1;
+    display: flex;
+    border-radius: 10px;
+    background-color: var(--red-900);
+}
+
+.arrow-up {
+    margin-top: 10px;
+    margin-left: 24px;
+    width: 0;
+    height: 0;
+    max-width: 0;
+    max-height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid var(--red-900);
+}
+.message-error span {
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    font-weight: 500;
+}
+
 .wrapper-inputs .wrapper-input-error {
-    border: 2px solid red;
+    border: 2px solid var(--red-900);
 }
 
-.wrapper-inputs div input:focus {
+.wrapper-content-inputs input:focus {
     transition: 0.5s;
     border-color: var(--blue-800);
 }
 
-.wrapper-inputs div input:hover {
+.wrapper-content-inputs input:hover {
     transition: 0.5s;
     border-color: var(--blue-800);
 }
 
-.wrapper-inputs div input::placeholder {
+.wrapper-content-inputs input::placeholder {
     font-size: 14px;
     font-weight: 500;
     color: var(--grey-500);
 }
 
-.wrapper-inputs div textarea {
+.wrapper-content-inputs textarea {
     font-size: 14px;
     font-weight: 500;
     color: var(--grey-400);
@@ -227,20 +257,20 @@
 }
 
 .wrapper-inputs .wrapper-textarea-error {
-    border: 2px solid red;
+    border: 2px solid var(--red-900);
 }
 
-.wrapper-inputs div textarea:focus {
+.wrapper-content-inputs textarea:focus {
     transition: 0.5s;
     border-color: var(--blue-800);
 }
 
-.wrapper-inputs div textarea:hover {
+.wrapper-content-inputs textarea:hover {
     transition: 0.5s;
     border-color: var(--blue-800);
 }
 
-.wrapper-inputs div textarea::placeholder {
+.wrapper-content-inputs textarea::placeholder {
     font-size: 14px;
     font-weight: 500;
     color: var(--grey-500);
@@ -249,7 +279,7 @@
 .input-required label::after {
     position: absolute;
     content: "*";
-    color: red;
+    color: var(--red-900);
     margin-left: 5px;
 }
 
@@ -305,7 +335,7 @@
         margin: 0;
         width: 100%;
     }
-    .wrapper-inputs div {
+    .wrapper-content-inputs {
         flex-direction: column;
         margin: 0;
         margin: 10px 0;
@@ -356,7 +386,7 @@
         font-size: 14px;
         white-space: nowrap;
     }
-    .wrapper-inputs div label {
+    .wrapper-content-inputs label {
         font-size: 14px;
     }
 }

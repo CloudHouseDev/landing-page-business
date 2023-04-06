@@ -47,7 +47,7 @@ function ContactUs() {
                                 ),
                                 {
                                     fieldId: "nameInput",
-                                    message: "Preencha o campo Nome",
+                                    message: "Preencha o campo Nome.",
                                 },
                             ],
                         };
@@ -61,7 +61,7 @@ function ContactUs() {
                                 ...state.errors.filter(
                                     (error) => error?.fieldId !== "nameInput"
                                 ),
-                                { fieldId: "nameInput", message: "Nome não é válido" },
+                                { fieldId: "nameInput", message: "Nome não é válido." },
                             ],
                         };
                     }
@@ -86,7 +86,7 @@ function ContactUs() {
                                 ),
                                 {
                                     fieldId: "emailInput",
-                                    message: "Preencha o campo E-mail",
+                                    message: "Preencha o campo E-mail.",
                                 },
                             ],
                         };
@@ -101,7 +101,7 @@ function ContactUs() {
                                 ),
                                 {
                                     fieldId: "emailInput",
-                                    message: "E-mail informado não é válido",
+                                    message: "E-mail informado não é válido.",
                                 },
                             ],
                         };
@@ -127,7 +127,7 @@ function ContactUs() {
                                 ),
                                 {
                                     fieldId: "subjectInput",
-                                    message: "Preencha o campo Assunto",
+                                    message: "Preencha o campo Assunto.",
                                 },
                             ],
                         };
@@ -142,7 +142,7 @@ function ContactUs() {
                                 ),
                                 {
                                     fieldId: "subjectInput",
-                                    message: "Assunto informado não é válido",
+                                    message: "Assunto informado não é válido.",
                                 },
                             ],
                         };
@@ -172,7 +172,7 @@ function ContactUs() {
                                 ),
                                 {
                                     fieldId: "phoneInput",
-                                    message: "Número informado não é válido",
+                                    message: "Número informado não é válido.",
                                 },
                             ],
                         };
@@ -188,7 +188,7 @@ function ContactUs() {
                                 ),
                                 {
                                     fieldId: "phoneInput",
-                                    message: "Número informado não é válido",
+                                    message: "Número informado não é válido.",
                                 },
                             ],
                         };
@@ -214,7 +214,7 @@ function ContactUs() {
                                 ),
                                 {
                                     fieldId: "messageInput",
-                                    message: "Preencha o campo Mensagem",
+                                    message: "Preencha o campo Mensagem.",
                                 },
                             ],
                         };
@@ -288,7 +288,7 @@ function ContactUs() {
             if (value.name.length <= 0) {
                 updateValue({
                     type: "setError",
-                    error: { fieldId: "nameInput", message: "Preencha o campo Nome" },
+                    error: { fieldId: "nameInput", message: "Preencha o campo Nome." },
                 });
             }
             if (value.email.length <= 0) {
@@ -296,7 +296,7 @@ function ContactUs() {
                     type: "setError",
                     error: {
                         fieldId: "emailInput",
-                        message: "Preencha o campo E-mail",
+                        message: "Preencha o campo E-mail.",
                     },
                 });
             }
@@ -305,7 +305,7 @@ function ContactUs() {
                     type: "setError",
                     error: {
                         fieldId: "subjectInput",
-                        message: "Preencha o campo Assunto",
+                        message: "Preencha o campo Assunto.",
                     },
                 });
             }
@@ -314,7 +314,7 @@ function ContactUs() {
                     type: "setError",
                     error: {
                         fieldId: "messageInput",
-                        message: "Preencha o campo Mensagem",
+                        message: "Preencha o campo Mensagem.",
                     },
                 });
             }
@@ -366,7 +366,12 @@ function ContactUs() {
                                 id="nameInput"
                             />
                             {messageErrorFromNameInput ? (
-                                <span>{messageErrorFromNameInput}</span>
+                                <>
+                                    <div className="arrow-up" />
+                                    <div className="message-error">
+                                        <span>{messageErrorFromNameInput}</span>
+                                    </div>
+                                </>
                             ) : (
                                 <></>
                             )}
@@ -389,7 +394,12 @@ function ContactUs() {
                                 id="emailInput"
                             />
                             {messageErrorFromEmailInput ? (
-                                <span>{messageErrorFromEmailInput}</span>
+                                <>
+                                    <div className="arrow-up" />
+                                    <div className="message-error">
+                                        <span>{messageErrorFromEmailInput}</span>
+                                    </div>
+                                </>
                             ) : (
                                 <></>
                             )}
@@ -414,7 +424,12 @@ function ContactUs() {
                                 id="subjectInput"
                             />
                             {messageErrorFromSubjectInput ? (
-                                <span>{messageErrorFromSubjectInput}</span>
+                                <>
+                                    <div className="arrow-up" />
+                                    <div className="message-error">
+                                        <span>{messageErrorFromSubjectInput}</span>
+                                    </div>
+                                </>
                             ) : (
                                 <></>
                             )}
@@ -442,7 +457,12 @@ function ContactUs() {
                             />
 
                             {messageErrorFromPhoneInput ? (
-                                <span>{messageErrorFromPhoneInput}</span>
+                                <>
+                                    <div className="arrow-up" />
+                                    <div className="message-error">
+                                        <span>{messageErrorFromSubjectInput}</span>
+                                    </div>
+                                </>
                             ) : (
                                 <></>
                             )}
@@ -466,7 +486,12 @@ function ContactUs() {
                                 placeholder="Digite sua mensagem aqui"
                             />
                             {messageErrorFromMessageInput ? (
-                                <span>{messageErrorFromMessageInput}</span>
+                                <>
+                                    <div className="arrow-up" />
+                                    <div className="message-error">
+                                        <span>{messageErrorFromMessageInput}</span>
+                                    </div>
+                                </>
                             ) : (
                                 <></>
                             )}
