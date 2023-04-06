@@ -460,7 +460,7 @@ function ContactUs() {
                                 <>
                                     <div className="arrow-up" />
                                     <div className="message-error">
-                                        <span>{messageErrorFromSubjectInput}</span>
+                                        <span>{messageErrorFromPhoneInput}</span>
                                     </div>
                                 </>
                             ) : (
