@@ -90,11 +90,11 @@
 
 @media (max-width: 1280px) {
     .box-service-offers {
-        width: 250px;
+        width: 225px;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .box-service-offers {
         width: 100%;
     }
