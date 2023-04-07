@@ -6,6 +6,7 @@ import Footer from "../components/footer/footer";
 import AboutUs from "./components/aboutUs/aboutUs";
 import ServicesOffer from "./components/ServicesOffer/ServicesOffer";
 import ContactUs from "./components/contactUs/contactUs";
+import Home from "./components/home/home";
 
 import "../styles/default-page.css";
 
@@ -13,6 +14,9 @@ function DefaultPage() {
     return (
         <>
             <Header />
+            <Container className="background-black" sectionId="section-home">
+                <Home />
+            </Container>
             <Container className="background-white" sectionId="section-about-us">
                 <AboutUs />
             </Container>
