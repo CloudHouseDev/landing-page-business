@@ -21,10 +21,11 @@ function ServicesOffer() {
             <div className="content-services-offer">
                 <div className="box-service-offers">
                     <div className="wrapper-icon">
-                        <WechatFilled />
+                        <AndroidOutlined />
                     </div>
-                    <h4>Consultoria de TI</h4>
+                    <h4>Aplicativos Personalizados</h4>
                 </div>
+
                 <div className="box-service-offers">
                     <div className="wrapper-icon">
                         <LaptopOutlined />
@@ -33,9 +34,9 @@ function ServicesOffer() {
                 </div>
                 <div className="box-service-offers">
                     <div className="wrapper-icon">
-                        <CloudServerOutlined />
+                        <WechatFilled />
                     </div>
-                    <h4>Gerenciamento em Nuvem & Hospedagem</h4>
+                    <h4>Consultoria de TI</h4>
                 </div>
                 <div className="box-service-offers">
                     <div className="wrapper-icon">
@@ -45,9 +46,9 @@ function ServicesOffer() {
                 </div>
                 <div className="box-service-offers">
                     <div className="wrapper-icon">
-                        <AndroidOutlined />
+                        <CloudServerOutlined />
                     </div>
-                    <h4>Aplicativos Personalizados</h4>
+                    <h4>Gerenciamento em Nuvem & Hospedagem</h4>
                 </div>
                 <div className="box-service-offers">
                     <div className="wrapper-icon">
