@@ -17,7 +17,7 @@ import "./styles.css";
 function ServicesOffer() {
     return (
         <div className="wrapper-services-offer-section">
-            <SectionTitle text="Produtos e Serviços" />
+            <SectionTitle text="Produtos e Serviços" className="spacing-padding-title" />
             <div className="content-services-offer">
                 <div className="box-service-offers">
                     <div className="wrapper-icon">
