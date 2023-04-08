@@ -293,9 +293,9 @@ function ContactUs() {
 
         if (response.status === 200) {
             cleanUpInputs();
-        } else {
+        } /* else {
             console.log("ERROUU", response);
-        }
+        } */
     }
 
     return (

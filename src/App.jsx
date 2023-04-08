@@ -7,9 +7,7 @@ import ModalMenu from "./components/modalMenu/modalMenu";
 import "./styles/global.css";
 
 function App() {
-    const isOpen = useSelector((state) => state.isOpen.value);
-
-    return isOpen ? <ModalMenu /> : <DefaultPage />;
+    return <DefaultPage />;
 }
 
 export default App;

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 function useWindowResize() {
     const defaultMediaQueries = {
-        LAPTOP_IN_PX: 1024,
+        LAPTOP_IN_PX: 740,
     };
 
     const [currentSize, setCurrentSize] = useState({
