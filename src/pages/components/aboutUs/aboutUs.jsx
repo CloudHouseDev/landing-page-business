@@ -3,7 +3,7 @@ import Lottie from "lottie-react";
 import { CheckCircleOutlined } from "@ant-design/icons";
 
 import SectionTitle from "../../../components/sectionTitle/sectionTitle";
-import ideaAnimation from "../../../assets/animations/jose.json";
+import ideaAnimation from "../../../assets/animations/ideaAnimation.json";
 
 import "./styles.css";
 
