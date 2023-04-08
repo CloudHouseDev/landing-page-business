@@ -21,8 +21,9 @@ function ContactUs() {
     const validationSchema = {
         isNameInvalid: /[0-9!@#$%^&*()_+{}\[\]:;<>,.?/~`|-]/,
         isEmailInvalid: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-        hasInputSpecialChars: /[^a-zA-Z0-9 ]/,
+        isSubjectInvalid: /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/,
         hasInputLetter: /[a-zA-Z]/,
+        hasInputNumber: /\d/,
     };
 
     function phoneFormatter(phone) {
@@ -132,7 +133,10 @@ function ContactUs() {
                             ],
                         };
                     }
-                    if (validationSchema.hasInputSpecialChars.test(action.subject)) {
+                    if (
+                        validationSchema.isSubjectInvalid.test(action.subject) ||
+                        validationSchema.hasInputNumber.test(action.subject)
+                    ) {
                         return {
                             ...state,
                             subject: action.subject,
@@ -222,6 +226,11 @@ function ContactUs() {
                     return {
                         ...state,
                         message: action.message,
+                        errors: [
+                            ...state.errors.filter(
+                                (error) => error?.fieldId !== "messageInput"
+                            ),
+                        ],
                     };
                 }
                 case "setError": {
