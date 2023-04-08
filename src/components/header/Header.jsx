@@ -17,7 +17,12 @@ function Header() {
     return (
         <header className="header-container">
             <div className="header-limit">
-                <img src={CloudHouseIT} alt="Cloud House It logo" />
+                <div className="wrapper-logo">
+                    <img src={CloudHouseIT} alt="Cloud House It logo" />
+                    <strong>
+                        House <br /> Cloud IT
+                    </strong>
+                </div>
                 {currentSize.width > defaultMediaQueries.LAPTOP_IN_PX ? (
                     <div className="wrapper-nav">
                         <a className="nav" href="#section-home">
