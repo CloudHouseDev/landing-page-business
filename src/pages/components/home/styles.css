@@ -3,7 +3,6 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 650px;
     min-height: 100vh;
 }
 
@@ -33,9 +32,16 @@
     align-items: center;
 }
 
+@media (max-width: 1280px) {
+    .align-items-animation {
+        width: 500px;
+    }
+}
+
 @media (max-width: 1085px) {
     .wrapper-home-section {
         flex-direction: column-reverse;
+        justify-content: space-around;
     }
 
     .wrapper-text {
@@ -54,31 +60,24 @@
 }
 
 @media (max-width: 725px) {
-    .align-items-animation {
-        width: 350px;
-    }
     .wrapper-text {
         font-size: 18px;
     }
 }
 
 @media (max-width: 630px) {
-    .wrapper-home-section {
-        max-height: 550px;
-    }
     .align-items-animation {
-        width: 300px;
+        width: 350px;
     }
     .wrapper-text {
         line-height: 27px;
         width: 90%;
-        text-align: center;
     }
 }
 
 @media (max-width: 600px) {
     .align-items-animation {
-        width: 280px;
+        width: 320px;
     }
 }
 
@@ -90,12 +89,10 @@
 
 @media (max-width: 410px) {
     .wrapper-home-section {
-        max-height: 500px;
-    }
-    .align-items-animation {
-        width: 250px;
+        justify-content: center;
     }
     .wrapper-text {
+        padding-top: 50%;
         height: 310px;
         max-height: 310px;
         font-size: 16px;
@@ -106,39 +103,30 @@
 
 @media (max-width: 320px) {
     .align-items-animation {
-        width: 230px;
+        width: 250px;
     }
     .wrapper-text {
         font-size: 14px;
     }
 }
 
-@media (max-width: 280px) {
-    .align-items-animation {
-        width: 200px;
-    }
+@media (max-width: 300px) {
     .wrapper-text {
         width: 100%;
     }
 }
 
-@media (max-width: 242px) {
+@media (max-width: 250px) {
+    .align-items-animation {
+        width: 100%;
+    }
     .wrapper-text {
         line-height: 22px;
     }
 }
 
 @media (max-width: 200px) {
-    .align-items-animation {
-        width: 180px;
-    }
     .wrapper-text {
         line-height: 20px;
-    }
-}
-
-@media (max-width: 165px) {
-    .align-items-animation {
-        width: 120px;
     }
 }
