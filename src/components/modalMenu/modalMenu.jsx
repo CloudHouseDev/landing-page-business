@@ -18,7 +18,7 @@ function ModalMenu() {
                     <div className="wrapper-logo">
                         <img src={CloudHouseIT} alt="Cloud House It logo" />
                         <strong>
-                            House <br /> Cloud IT
+                            Cloud <br /> House IT
                         </strong>
                     </div>
                     <button
