@@ -1,11 +1,21 @@
 .wrapper-about-us-section {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.wrapper-boxes {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 60px 0;
     overflow: hidden;
     padding: 15px 0;
+    margin-top: 30px;
 }
 
 .box {
@@ -52,8 +62,62 @@
     color: var(--white-400);
 }
 
+.wrapper-content-aside-text {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    /*  border: 2px solid red; */
+}
+
+.wrapper-animation {
+    width: 800px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid blue; */
+    margin-left: -90px;
+}
+
+.wrapper-texts {
+    display: flex;
+    flex-direction: column;
+    /*  width: 50%; */
+    height: 80%;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.wrapper-texts p {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 23px;
+    text-align: left;
+    white-space: break-spaces;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    color: var(--grey-400);
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    max-width: 700px;
+}
+
+.wrapper-texts p svg {
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+.wrapper-texts p svg path {
+    fill: green;
+}
+
 @media (max-width: 1024px) {
-    .wrapper-about-us-section {
+    .wrapper-boxes {
         flex-direction: column;
     }
     .box {
