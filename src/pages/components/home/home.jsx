@@ -12,7 +12,7 @@ function Home() {
                     A <span>Cloud House It</span>, é uma Soft House fundada em 2023 com o
                     propósito de alcançar a excelência em seu segmento através da oferta
                     de tecnologias avançadas e serviços especializados. Com uma equipe
-                    altamente capacitada e dedicada, a empresa está comprometida em
+                    altamente capacitada e dedicada, nós estamos sempre comprometidos em
                     oferecer soluções inovadoras e personalizadas para cada cliente.
                 </p>
             </div>

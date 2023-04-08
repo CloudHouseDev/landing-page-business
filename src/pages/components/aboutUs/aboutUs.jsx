@@ -49,7 +49,7 @@ function AboutUs() {
                     <br />
                     <span>
                         Alcançar a excelência no segmento, através de tecnologias
-                        avançadas, oferecendo soluções corporativas e com alta relação
+                        consolidadas, oferecendo soluções corporativas e com alta relação
                         custo/benefício, de maneira a satisfazer as necessidades do
                         cliente.
                     </span>

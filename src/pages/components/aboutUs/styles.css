@@ -5,7 +5,7 @@
     justify-content: center;
     width: 100%;
     overflow: hidden;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .wrapper-boxes {
@@ -67,7 +67,6 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    /*  border: 2px solid red; */
 }
 
 .wrapper-animation {
@@ -76,14 +75,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* border: 2px solid blue; */
     margin-left: -90px;
 }
 
 .wrapper-texts {
     display: flex;
     flex-direction: column;
-    /*  width: 50%; */
     height: 80%;
     justify-content: space-between;
     align-items: flex-start;
@@ -91,7 +88,6 @@
 
 .wrapper-texts p {
     width: 100%;
-    font-size: 16px;
     font-weight: 600;
     line-height: 23px;
     text-align: left;
@@ -116,6 +112,43 @@
     fill: green;
 }
 
+@media (max-width: 1600px) {
+    .wrapper-animation {
+        margin-left: -40px;
+    }
+}
+
+@media (max-width: 1380px) {
+    .wrapper-animation {
+        width: 500px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .wrapper-animation {
+        width: 500px;
+    }
+    .wrapper-texts {
+        height: 100%;
+    }
+}
+
+@media (max-width: 1180px) {
+    .wrapper-content-aside-text {
+        flex-direction: column;
+    }
+    .wrapper-texts {
+        width: 100%;
+        align-items: center;
+    }
+
+    .wrapper-animation {
+        width: 600px;
+        height: 100%;
+        margin-left: 0px;
+    }
+}
+
 @media (max-width: 1024px) {
     .wrapper-boxes {
         flex-direction: column;
@@ -126,7 +159,17 @@
     }
 }
 
+@media (max-width: 600px) {
+    .wrapper-animation {
+        width: 500px;
+    }
+}
+
 @media (max-width: 550px) {
+    .wrapper-animation {
+        width: 400px;
+    }
+
     .box strong {
         font-size: 25px;
     }
@@ -136,12 +179,27 @@
 }
 
 @media (max-width: 375px) {
+    .wrapper-texts p {
+        font-size: 14px;
+    }
+    .wrapper-animation {
+        width: 300px;
+    }
+
     .box strong {
         margin-top: 10px;
         font-size: 20px;
     }
     .box span {
         margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .wrapper-texts p {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -153,5 +211,15 @@
 
     .box strong {
         font-size: 16px;
+    }
+}
+
+@media (max-width: 280px) {
+    .wrapper-animation {
+        width: 100%;
+    }
+
+    .wrapper-texts p {
+        font-size: 13px;
     }
 }
