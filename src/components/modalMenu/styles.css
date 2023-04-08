@@ -1,11 +1,14 @@
 .modal-menu-container {
     min-height: 100vh;
-    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-
     background-color: var(--black-400);
+    z-index: 11000;
+    top: 0;
+    left: 0;
+    position: fixed;
 }
 
 .modal-menu-container-limit {
@@ -34,7 +37,7 @@
     justify-content: flex-start;
     flex-direction: column;
     width: 100%;
-    margin: 20px 0px;
+    margin: 40px 0px;
     padding-bottom: 20px;
 }
 
@@ -89,4 +92,10 @@
 
 .change-modal-menu .nav-bottom-modal-menu {
     transform: translate(0, -8px) rotate(45deg);
+}
+
+@media (max-width: 200px) {
+    .nav-modal-menu {
+        font-size: 16px;
+    }
 }

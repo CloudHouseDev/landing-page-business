@@ -15,7 +15,12 @@ function ModalMenu() {
         <div className="modal-menu-container">
             <div className="modal-menu-container-limit">
                 <header className="header-modal-menu">
-                    <img src={CloudHouseIT} alt="Cloud House It logo" />
+                    <div className="wrapper-logo">
+                        <img src={CloudHouseIT} alt="Cloud House It logo" />
+                        <strong>
+                            House <br /> Cloud IT
+                        </strong>
+                    </div>
                     <button
                         type="button"
                         className="container-modal-menu change-modal-menu"
@@ -56,7 +61,7 @@ function ModalMenu() {
                         Contato
                     </a>
                 </div>
-                <Footer />
+                <Footer shouldShowHomeSectionLink={false} />
             </div>
         </div>
     );
