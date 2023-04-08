@@ -1,7 +1,7 @@
 /* eslint-disable consistent-return */
 /* eslint-disable default-case */
 import React, { useMemo, useReducer } from "react";
-import { AsYouType, isValidPhoneNumber, parseNumber } from "libphonenumber-js";
+import { AsYouType, isValidPhoneNumber } from "libphonenumber-js";
 import emailjs from "@emailjs/browser";
 import classNames from "classnames";
 
@@ -38,23 +38,10 @@ function ContactUs() {
         (state, action) => {
             switch (action.type) {
                 case "setName": {
-                    if (!action.name) {
-                        return {
-                            ...state,
-                            name: action.name,
-                            errors: [
-                                ...state.errors.filter(
-                                    (error) => error?.fieldId !== "nameInput"
-                                ),
-                                {
-                                    fieldId: "nameInput",
-                                    message: "Preencha o campo Nome.",
-                                },
-                            ],
-                        };
-                    }
-
-                    if (validationSchema.isNameInvalid.test(action.name)) {
+                    if (
+                        !!action.name &&
+                        validationSchema.isNameInvalid.test(action.name)
+                    ) {
                         return {
                             ...state,
                             name: action.name,
@@ -77,22 +64,10 @@ function ContactUs() {
                     };
                 }
                 case "setEmail": {
-                    if (!action.email) {
-                        return {
-                            ...state,
-                            email: action.email,
-                            errors: [
-                                ...state.errors.filter(
-                                    (error) => error?.fieldId !== "emailInput"
-                                ),
-                                {
-                                    fieldId: "emailInput",
-                                    message: "Preencha o campo E-mail.",
-                                },
-                            ],
-                        };
-                    }
-                    if (!validationSchema.isEmailInvalid.test(action.email)) {
+                    if (
+                        !!action.email &&
+                        !validationSchema.isEmailInvalid.test(action.email)
+                    ) {
                         return {
                             ...state,
                             email: action.email,
@@ -118,24 +93,11 @@ function ContactUs() {
                     };
                 }
                 case "setSubject": {
-                    if (!action.subject) {
-                        return {
-                            ...state,
-                            subject: action.subject,
-                            errors: [
-                                ...state.errors.filter(
-                                    (error) => error?.fieldId !== "subjectInput"
-                                ),
-                                {
-                                    fieldId: "subjectInput",
-                                    message: "Preencha o campo Assunto.",
-                                },
-                            ],
-                        };
-                    }
                     if (
-                        validationSchema.isSubjectInvalid.test(action.subject) ||
-                        validationSchema.hasInputNumber.test(action.subject)
+                        (!!action.subject &&
+                            validationSchema.isSubjectInvalid.test(action.subject)) ||
+                        (!!action.subject &&
+                            validationSchema.hasInputNumber.test(action.subject))
                     ) {
                         return {
                             ...state,
@@ -208,21 +170,6 @@ function ContactUs() {
                     };
                 }
                 case "setMessage": {
-                    if (!action.message) {
-                        return {
-                            ...state,
-                            message: action.message,
-                            errors: [
-                                ...state.errors.filter(
-                                    (error) => error?.fieldId !== "messageInput"
-                                ),
-                                {
-                                    fieldId: "messageInput",
-                                    message: "Preencha o campo Mensagem.",
-                                },
-                            ],
-                        };
-                    }
                     return {
                         ...state,
                         message: action.message,
