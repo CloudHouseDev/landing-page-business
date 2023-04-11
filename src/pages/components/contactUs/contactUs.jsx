@@ -1,6 +1,7 @@
 /* eslint-disable consistent-return */
 /* eslint-disable default-case */
 import React, { useMemo, useReducer } from "react";
+import { toast } from "react-toastify";
 import { AsYouType, isValidPhoneNumber } from "libphonenumber-js";
 import emailjs from "@emailjs/browser";
 import classNames from "classnames";
@@ -300,10 +301,32 @@ function ContactUs() {
         );
 
         if (response.status === 200) {
-            cleanUpInputs();
-        } /* else {
-            console.log("ERROUU", response);
-        } */
+            toast.success("E-mail enviado com sucesso", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        } else {
+            toast.error(
+                "Serviço está indisponível. Entre em contato  atráves do WhatsApp",
+                {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                }
+            );
+        }
+        cleanUpInputs();
     }
 
     return (
