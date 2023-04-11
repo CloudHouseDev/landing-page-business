@@ -18,6 +18,10 @@ import SectionTitle from "../../../components/sectionTitle/sectionTitle";
 import "./styles.css";
 
 function ContactUs() {
+    const SERVICE_ID = "service_lp7ecjm";
+    const PUBLIC_KEY = "wfcLZyZylwVIx3ZHB";
+    const TEMPLATE_ID = "template_81aewod";
+
     const validationSchema = {
         isNameInvalid: /[0-9!@#$%^&*()_+{}\[\]:;<>,.?/~`|-]/,
         isEmailInvalid: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
@@ -278,17 +282,21 @@ function ContactUs() {
         }
 
         const response = await emailjs.send(
-            "service_po35nhq",
-            "template_qkl21yl",
+            SERVICE_ID,
+            TEMPLATE_ID,
             {
-                from_subject: value.subject,
-                from_name: value.name,
-                from_message: value.message,
-                from_phone: value.phone,
-                from_email: value.email,
                 reply_to: value.email,
+                from_name: value.name,
+                from_phone: value.phone
+                    .replace("(", "")
+                    .replace(")", "")
+                    .replace("-", "")
+                    .replace(" ", ""),
+                from_email: value.email,
+                from_subject: value.subject,
+                from_message: value.message,
             },
-            "e10Y-nn5CZVKAP0d9"
+            PUBLIC_KEY
         );
 
         if (response.status === 200) {
