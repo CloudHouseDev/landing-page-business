@@ -313,7 +313,7 @@ function ContactUs() {
             });
         } else {
             toast.error(
-                "Serviço está indisponível. Entre em contato  atráves do WhatsApp",
+                "Serviço está indisponível, entre em contato atráves do WhatsApp",
                 {
                     position: "top-center",
                     autoClose: 5000,
