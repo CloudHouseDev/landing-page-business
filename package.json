@@ -2,7 +2,7 @@
     "name": "landing-page-business",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://teste.cloudhouseit.com.br/",
+    "homepage": "https://www.cloudhouseit.com.br/",
     "dependencies": {
         "@ant-design/icons": "^5.0.1",
         "@emailjs/browser": "^3.10.0",
