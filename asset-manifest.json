@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/landing-page-business/static/css/main.81ac4f89.css",
+    "main.js": "/landing-page-business/static/js/main.81fc8551.js",
+    "static/media/cloud_house_logo_transparent_white.png": "/landing-page-business/static/media/cloud_house_logo_transparent_white.be1263237fc9dd13f2bd.png",
+    "index.html": "/landing-page-business/index.html",
+    "main.81ac4f89.css.map": "/landing-page-business/static/css/main.81ac4f89.css.map",
+    "main.81fc8551.js.map": "/landing-page-business/static/js/main.81fc8551.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.81ac4f89.css",
+    "static/js/main.81fc8551.js"
+  ]
+}
