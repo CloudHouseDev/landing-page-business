@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.81ac4f89.css",
-    "main.js": "/static/js/main.8fbe8af6.js",
+    "main.css": "/static/css/main.96fab5a8.css",
+    "main.js": "/static/js/main.f6f43026.js",
     "static/media/cloud_house_logo_transparent_white.png": "/static/media/cloud_house_logo_transparent_white.be1263237fc9dd13f2bd.png",
     "index.html": "/index.html",
-    "main.81ac4f89.css.map": "/static/css/main.81ac4f89.css.map",
-    "main.8fbe8af6.js.map": "/static/js/main.8fbe8af6.js.map"
+    "main.96fab5a8.css.map": "/static/css/main.96fab5a8.css.map",
+    "main.f6f43026.js.map": "/static/js/main.f6f43026.js.map"
   },
   "entrypoints": [
-    "static/css/main.81ac4f89.css",
-    "static/js/main.8fbe8af6.js"
+    "static/css/main.96fab5a8.css",
+    "static/js/main.f6f43026.js"
   ]
 }
