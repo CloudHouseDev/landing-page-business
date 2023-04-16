@@ -19,6 +19,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 0px 10px;
 }
 
 .back-nav-link {
@@ -58,8 +59,36 @@
     color: var(--blue-400);
 }
 
+@media (max-width: 400px) {
+    .back-nav-link {
+        padding: 10px 10px;
+    }
+}
+
 @media (max-width: 340px) {
     .footer-details {
         flex-direction: column;
+    }
+}
+
+@media (max-width: 300px) {
+    .footer {
+        flex-direction: column-reverse;
+        height: 100%;
+    }
+    .back-nav-link {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 270px) {
+    .footer div {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 230px) {
+    .footer div {
+        font-size: 12px;
     }
 }
