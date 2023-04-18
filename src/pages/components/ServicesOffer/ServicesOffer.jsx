@@ -54,7 +54,7 @@ function ServicesOffer() {
                     <div className="wrapper-icon">
                         <ApartmentOutlined />
                     </div>
-                    <h4>Desenvolvimento de Microsserviços & Monólitos</h4>
+                    <h4>Desenvolvimento de Microsserviços & Monolitos</h4>
                 </div>
                 <div className="box-service-offers">
                     <div className="wrapper-icon">

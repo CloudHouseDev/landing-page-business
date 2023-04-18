@@ -410,3 +410,29 @@
         font-size: 12px;
     }
 }
+
+@media (hover: none) {
+    .button-submit:hover {
+        background: var(--blue-400);
+        border: 4px solid var(--blue-400);
+        border-radius: 5px;
+        color: var(--white-400);
+    }
+
+    .wrapper-content-inputs input:hover {
+        border: 2px solid var(--grey-300);
+    }
+
+    .wrapper-content-inputs textarea:hover {
+        border: 2px solid var(--grey-300);
+    }
+}
+
+@media (hover: none) {
+    .button-submit:hover {
+        background: var(--blue-400);
+        border: 4px solid var(--blue-400);
+        border-radius: 5px;
+        color: var(--white-400);
+    }
+}

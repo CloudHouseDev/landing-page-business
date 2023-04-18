@@ -42,6 +42,12 @@
     background: var(--blue-400);
 }
 
+@media (hover: none) {
+    .back-nav-link:hover {
+        background-color: transparent;
+    }
+}
+
 .footer-details {
     display: flex;
     align-items: center;

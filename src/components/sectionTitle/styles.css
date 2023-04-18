@@ -42,6 +42,13 @@
     transition: all ease-in-out 0.4s;
 }
 
+@media (hover: none) {
+    .wrapper-section-title-items:hover div {
+        max-width: 150px;
+        transition: all ease-in-out 0.4s;
+    }
+}
+
 @media (max-width: 500px) {
     .wrapper-section-title-items h2 {
         font-size: 28px;

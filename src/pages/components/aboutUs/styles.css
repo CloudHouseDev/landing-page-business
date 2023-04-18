@@ -223,3 +223,18 @@
         font-size: 13px;
     }
 }
+
+@media (hover: none) {
+    .box:hover {
+        background-color: var(--white-400);
+        padding: 0 30px;
+    }
+
+    .box:hover strong {
+        color: var(--black-200);
+    }
+
+    .box:hover span {
+        color: var(--grey-400);
+    }
+}
