@@ -8,8 +8,8 @@ function Footer({ shouldShowHomeSectionLink }) {
     return (
         <footer className="footer">
             <div>
-                <span>Copyright © 2023. Todos os direitos reservados.</span>
-                <strong className="footer-details">Cloud House IT</strong>
+                <span>Copyright © 2021. Todos os direitos reservados.</span>
+                <strong className="footer-details">CLOUD HOUSE TECHNOLOGIES LTDA</strong>
             </div>
             {shouldShowHomeSectionLink ? (
                 <a href="#section-home" className="back-nav-link">

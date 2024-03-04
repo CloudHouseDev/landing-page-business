@@ -8,12 +8,11 @@ function Home() {
     return (
         <div className="wrapper-home-section">
             <div className="wrapper-text">
+                <h1>Bem-vindo à Cloud House - Sua Solução Digital Inovadora!</h1>
+                <br />
                 <p>
-                    A <span>Cloud House It</span>, é uma Soft House fundada em 2023 com o
-                    propósito de alcançar a excelência em seu segmento através da oferta
-                    de tecnologias avançadas e serviços especializados. Com uma equipe
-                    altamente capacitada e dedicada, nós estamos sempre comprometidos em
-                    oferecer soluções inovadoras e personalizadas para cada cliente.
+                Na <span>Cloud House</span>, nós transformamos ideias em realidade digital. 
+                Somos uma Software House apaixonada por inovação, dedicada a oferecer soluções tecnológicas de ponta para impulsionar o sucesso do seu negócio.
                 </p>
             </div>
 

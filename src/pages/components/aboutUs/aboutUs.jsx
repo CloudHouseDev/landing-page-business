@@ -32,6 +32,11 @@ function AboutUs() {
                     <br />
                     <p>
                         <CheckCircleOutlined />
+                        Somos uma equipe de profissionais apaixonados pela interseção entre criatividade e tecnologia. Com anos de experiência, desenvolvemos um conjunto diversificado de competências, capacitando-nos a enfrentar desafios complexos e oferecer soluções customizadas que atendem às necessidades únicas dos nossos clientes.
+                    </p>
+                    <br />
+                    <p>
+                        <CheckCircleOutlined />
                         Entre alguns serviços oferecidos pela empresa, estão a consultoria
                         de TI, gerenciamento em nuvem e hospedagem, criação de sites e
                         plataformas web, desenvolvimento de aplicativos personalizados,
