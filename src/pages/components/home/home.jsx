@@ -11,7 +11,7 @@ function Home() {
                 <h1>Bem-vindo à Cloud House - Sua Solução Digital Inovadora!</h1>
                 <br />
                 <p>
-                Na <span>Cloud House</span>, nós transformamos ideias em realidade digital. 
+                Na <span> Cloud House </span>, nós transformamos ideias em realidade digital. 
                 Somos uma Software House apaixonada por inovação, dedicada a oferecer soluções tecnológicas de ponta para impulsionar o sucesso do seu negócio.
                 </p>
             </div>
