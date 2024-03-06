@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import Footer from "../footer/footer";
 import { changeValue } from "../../hooks/useShowingModalMenu";
 
-import CloudHouseIT from "../../assets/images/cloud_house_logo_transparent_white.png";
+import CloudHouseIT from "../../assets/images/logo.svg";
 
 import "./styles.css";
 

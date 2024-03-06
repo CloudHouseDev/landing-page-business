@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 
 import { useSelector, useDispatch } from "react-redux";
-import CloudHouseIT from "../../assets/images/cloud_house_logo_transparent_white.png";
+import CloudHouseIT from "../../assets/images/logo.svg";
 
 import useWindowResize from "../../hooks/useWindowResize";
 import { changeValue } from "../../hooks/useShowingModalMenu";
@@ -22,9 +22,7 @@ function Header() {
                 <div className="header-limit">
                     <div className="wrapper-logo">
                         <img src={CloudHouseIT} alt="Cloud House It logo" />
-                        <strong>
-                            Cloud <br /> House IT
-                        </strong>
+                        
                     </div>
                     {currentSize.width > defaultMediaQueries.LAPTOP_IN_PX ? (
                         <div className="wrapper-nav">

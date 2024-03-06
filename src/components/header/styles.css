@@ -26,14 +26,14 @@
 .wrapper-logo {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    height: 4rem;
-    width: 180px;
+    justify-content: center;
+    height: 2rem;
+    width: 120px;
 }
 
 .wrapper-logo img {
-    width: 60px;
-    height: 60px;
+    width: 250px;
+    height: 250px;
 }
 
 .wrapper-logo strong {
