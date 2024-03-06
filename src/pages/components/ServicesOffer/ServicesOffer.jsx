@@ -60,7 +60,7 @@ function ServicesOffer() {
                     <div className="wrapper-icon">
                         <BarChartOutlined />
                     </div>
-                    <h4>Análise de Sistemas e Testes Automatizados</h4>
+                    <h4>Análise de jogos do inter teste em prod</h4>
                 </div>
             </div>
         </div>
