@@ -1,6 +1,8 @@
 import React from "react";
 import { ToastContainer } from "react-toastify";
 
+// eslint-disable-next-line import/no-extraneous-dependencies
+import AdSense from "react-adsense";
 import DefaultPage from "./pages/Default";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -9,6 +11,7 @@ import "./styles/global.css";
 function App() {
     return (
         <>
+            <AdSense.Google client="ca-pub-9712344081378233" slot="7806394673" />
             <DefaultPage />
             <ToastContainer
                 position="top-center"
