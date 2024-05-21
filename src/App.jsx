@@ -11,7 +11,6 @@ import "./styles/global.css";
 function App() {
     return (
         <>
-            <AdSense.Google client="ca-pub-9712344081378233" slot="7806394673" />
             <DefaultPage />
             <ToastContainer
                 position="top-center"
@@ -25,6 +24,7 @@ function App() {
                 pauseOnHover
                 theme="colored"
             />
+            {/* <AdSense.Google client="ca-pub-9712344081378233" slot="7806394673" /> */}
         </>
     );
 }
